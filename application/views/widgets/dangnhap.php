@@ -25,10 +25,10 @@
         })
     }
     $("#login-username,#login-password").focus(function () {
-        $('#usser-login-alert').fadeOut(1000);
+        $('#usser-login-alert').fadeOut(1);
     });
     $("#usser-login-alert").click(function () {
-        $('#usser-login-alert').fadeOut(1000);
+        $('#usser-login-alert').fadeOut(1);
     });
 
     function change_provi2(alias) {

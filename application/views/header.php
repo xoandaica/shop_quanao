@@ -1,46 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:fb='http://www.facebook.com/2008/fbml'>
     <head>
-
-        <!--    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
-            <title><?= isset($seo['title']) && $seo['title'] != '' ? $seo['title'] : @$this->option->site_name; ?></title>
-            <meta name='description'
-                  content='<?= isset($seo['description']) ? $seo['description'] : @$this->option->site_description; ?>'/>
-            <meta name='keywords'
-                  content='<?= isset($seo['keyword']) && $seo['keyword'] != '' ? $seo['keyword'] : $this->option->site_keyword; ?>'/>
-            <meta name='robots' content='index,follow'/>
-            <meta name='revisit-after' content='1 days'/>
-            <meta http-equiv='content-language' content='vi'/>
-        
-                for facebook
-            <meta property="og:title"
-                  content="<?= isset($seo['title']) && $seo['title'] != '' ? $seo['title'] : @$this->option->site_name; ?>"/>
-            <meta property="og:site_name" content="<?= @$this->option->site_name; ?>"/>
-            <meta property="og:url" content="<?= current_url(); ?>"/>
-            <meta property="og:description"
-                  content="<?= isset($seo['description']) && $seo['description'] != '' ? $seo['description'] : @$this->option->site_description; ?>"/>
-            <meta property="og:type" content="<?= @$seo['type']; ?>"/>
-            <meta property="og:image"
-                  content="<?= isset($seo['image']) && $seo['image'] != '' ? base_url($seo['image']) : $this->option->site_logo; ?>"/>
-        
-            <meta property="og:locale" content="vi"/>
-        
-             for Twitter 
-            <meta name="twitter:card"
-                  content="<?= isset($seo['description']) && $seo['description'] != '' ? $seo['description'] : @$this->option->site_description; ?>"/>
-            <meta name="twitter:title"
-                  content="<?= isset($seo['title']) && $seo['title'] != '' ? $seo['title'] : @$this->option->site_name; ?>"/>
-            <meta name="twitter:description"
-                  content="<?= isset($seo['description']) && $seo['description'] != '' ? $seo['description'] : @$this->option->site_description; ?>"/>
-            <meta name="twitter:image"
-                  content="<?= isset($seo['image']) && $seo['image'] != '' ? base_url($seo['image']) : base_url(@$this->option->site_logo); ?>"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1">-->
         <meta name="viewport" id="viewport" content="user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0" />
         <link rel="shortcut icon" href="<?= base_url($this->option->site_favicon) ?>"/>
-
-
-
-        <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/css/site/bootstrap.min.css') ?>" rel="stylesheet"/>
         <link href="<?= base_url('assets/css/bootstrap-theme.css') ?>" rel="stylesheet"/>
         <link href="<?= base_url('assets/css/flexslider.css') ?>" rel="stylesheet"/>
         <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet"/>
@@ -52,42 +15,25 @@
         <link href="<?= base_url('assets/css/owl.carousel.css') ?>" rel="stylesheet"/>
         <link href="<?= base_url('assets/css/owl.theme.css') ?>" rel="stylesheet"/>
         <link href="<?= base_url('assets/css/prism.css') ?>" rel="stylesheet"/>
-
-
+        <link href="<?= base_url('assets/css/custom.css') ?>" rel="stylesheet"/>
         <script type="text/javascript" src="<?= base_url('assets/js/site/jquery-1.11.1.min.js') ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/site/bootstrap.min.js') ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/site/nav-menu3.js') ?>"></script><!--menu-->
-
-
         <script type="text/javascript" src="<?= base_url('assets/js/site/style-img.js') ?>"></script>
-
         <script type="text/javascript" src="<?= base_url('assets/js/site/main_site.js') ?>"></script>
 
     </head>
     <body>
         <div id="fb-root"></div>
-        <script>(function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id))
-                    return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-        <script src="https://apis.google.com/js/platform.js" async defer>
-            {
-                lang: 'vi'
-            }
-        </script>
-        <!--script G+-->
-
         <script type="text/javascript"> // giỏ hàng
             function base_url() {
                 return '<?php echo base_url(); ?>';
             }
         </script>
+
         <header>
+            <?= $dangnhap ?>
+            <?= $dangky ?>
             <div class="container">
                 <div class="row">
 
@@ -180,8 +126,12 @@
                                 <a href="http://kkfashion.vn/cart/"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/icon-cart.png" alt=""> Giỏ hàng <span class="number-cart">0</span></a>
                             </div>
                             <div class="login-register">
-                                <a href="my-account/index.html"><i class="fa fa-user"></i> 
-                                    Đăng ký / Đăng nhập	                            </a>
+                                <a style="cursor: pointer" data-toggle="modal" data-target=".bs-example-modal-sm2"
+                                   title="Đăng ký">Đăng ký</a>
+                                <a href="" class="firt" data-toggle="modal" data-target=".bs-example-modal-sm"
+                                   title="Đăng nhập">
+                                    Đăng nhập
+                                </a> 
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -259,8 +209,12 @@
                                     <a href="http://kkfashion.vn/cart/"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/icon-cart.png" alt=""> Giỏ hàng <span class="number-cart">0</span></a> 
                                 </div>
                                 <div class="login-register">
-                                    <a href="my-account/index.html"><i class="fa fa-user"></i> 
-                                        Đăng ký / Đăng nhập                                    </a>
+                                    <a style="cursor: pointer" data-toggle="modal" data-target=".bs-example-modal-sm2"
+                                       title="icon">Đăng ký</a>
+                                    <a href="" class="firt" data-toggle="modal" data-target=".bs-example-modal-sm"
+                                       title=" Đăng nhập">
+                                        Đăng nhập
+                                    </a> 
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -377,15 +331,15 @@
             <script type="text/javascript">
                 var ww = document.body.clientWidth;
 
-                $(document).ready(function () {
-                    $(".nav-top li a").each(function () {
+                $(document).ready(function() {
+                    $(".nav-top li a").each(function() {
                         if ($(this).next().length > 0) {
                             $(this).addClass("parent");
                         }
                         ;
                     })
 
-                    $(".toggleMenu").click(function (e) {
+                    $(".toggleMenu").click(function(e) {
                         e.preventDefault();
                         $(this).toggleClass("active");
                         $(".nav-top").toggle();
@@ -393,12 +347,12 @@
                     adjustMenu();
                 })
 
-                $(window).bind('resize orientationchange', function () {
+                $(window).bind('resize orientationchange', function() {
                     ww = document.body.clientWidth;
                     adjustMenu();
                 });
 
-                var adjustMenu = function () {
+                var adjustMenu = function() {
                     if (ww < 768) {
                         $(".toggleMenu").css("display", "inline-block");
                         if (!$(".toggleMenu").hasClass("active")) {
@@ -407,7 +361,7 @@
                             $(".nav-top").show();
                         }
                         $(".nav-top li").unbind('mouseenter mouseleave');
-                        $(".nav-top li a.parent").unbind('click').bind('click', function (e) {
+                        $(".nav-top li a.parent").unbind('click').bind('click', function(e) {
                             // must be attached to anchor element to prevent bubbling
                             e.preventDefault();
                             $(this).parent("li").toggleClass("hover");
@@ -418,7 +372,7 @@
                         $(".nav-top").show();
                         $(".nav-top li").removeClass("hover");
                         $(".nav-top li a").unbind('click');
-                        $(".nav-top li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function () {
+                        $(".nav-top li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
                             // must be attached to li so that mouseleave is not triggered when hover over submenu
                             $(this).toggleClass('hover');
                         });
@@ -427,9 +381,9 @@
 
             </script>
             <script type="text/javascript" charset="utf-8">
-                jQuery(window).ready(function () {
+                jQuery(window).ready(function() {
 
-                    jQuery('#search-mb').click(function () {
+                    jQuery('#search-mb').click(function() {
                         if (jQuery('.form-search').hasClass('hidden')) {
                             jQuery('.form-search').removeClass('hidden');
                         } else {

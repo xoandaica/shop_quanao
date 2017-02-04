@@ -121,20 +121,6 @@ class MY_Controller extends CI_Controller {
 
     public function LoadHeader($seo = null, $url_cate = null, $id = null) {
         $data = array();
-
-//            $count_like=0;
-//            if(!isset($_SESSION['liked'])){
-//                $_SESSION['liked']=array();
-//            }else{
-//                foreach ($_SESSION['liked'] as $v) {
-//                    $count_like += $v['liked'];
-//                }
-//            }
-//            $data['liked'] = @$_SESSION['liked'];
-        //     $data['liked']=$this->f_homemodel->getLikedPro($data['liked']->id);
-        //  echo "<pre>";
-//            var_dump($data['liked']);
-
         if ($this->session->userdata('userid')) {
             @$u = $this->f_homemodel->getFirstRowWhere('users', array('id' => $this->session->userdata('userid')));
             $data['user_item'] = $u;
@@ -169,7 +155,7 @@ class MY_Controller extends CI_Controller {
         } elseif (@$this->language == 2) {
             $data['address2'] = $this->option_1;
         }
-
+        
         $data['seo'] = $seo;
         $this->load->view('header', $data);
     }

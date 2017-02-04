@@ -21,8 +21,7 @@
         }
     refresh_capcha();
 </script>
-
-<div class="modal fade shown.bs.modal  bs-example-modal-sm2" id="singup_frm" tabindex="-1" role="dialog"
+<div class="modal fade shown.bs.modal  bs-example-modal-sm2" id="singup_frm"  role="dialog"
      aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-md">
         <div class="modal-content">

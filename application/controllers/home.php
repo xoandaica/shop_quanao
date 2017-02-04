@@ -74,7 +74,7 @@ class Home extends MY_Controller
 
         $this->LoadHeader();
 //        $this->load->view('home',$data);
-//        $this->LoadFooter();
+        $this->LoadFooter();
     }
     public function tuyendung(){
 
