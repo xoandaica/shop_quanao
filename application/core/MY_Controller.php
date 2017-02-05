@@ -155,7 +155,7 @@ class MY_Controller extends CI_Controller {
         } elseif (@$this->language == 2) {
             $data['address2'] = $this->option_1;
         }
-        
+
         $data['seo'] = $seo;
         $this->load->view('header', $data);
     }

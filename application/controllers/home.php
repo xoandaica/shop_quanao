@@ -67,13 +67,9 @@ class Home extends MY_Controller
 
         $data['pro_cat_focus']   = $this->f_homemodel->Get_product_category('focus',15,0);
 
-
-
-
        $data['function']=$this;
-
         $this->LoadHeader();
-//        $this->load->view('home',$data);
+        $this->load->view('home',$data);
         $this->LoadFooter();
     }
     public function tuyendung(){

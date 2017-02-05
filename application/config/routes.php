@@ -102,7 +102,7 @@ $route['([a-zA-Z0-9_-]+)-pj([a-zA-Z0-9_-]+)/(:num)'] = 'project/project_bycatego
 $route['([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-c(:num)pj(:num)'] = 'project/projectdetail/$1/$2/$3/$4';
 
 
-http://localhost/nuhoangquanjean/quan-au-chan-vay/quan-au-chan-vay-2-c26p24.html
+//http://localhost/nuhoangquanjean/quan-au-chan-vay/quan-au-chan-vay-2-c26p24.html
 //product-category-alias  + pc + cat_id
 $route['([a-zA-Z0-9_-]+)-pc([a-zA-Z0-9_-]+)'] = 'products/pro_bycategory/$1/$2';
 $route['([a-zA-Z0-9_-]+)-pc([a-zA-Z0-9_-]+)/(:num)'] = 'products/pro_bycategory/$1/$2/$3';

@@ -4,13 +4,13 @@
                 <div class="col-md-15 kk-shop-columns">
                     <p>Shop Online</p>
                     <ul>
-                       <li><a href="danh-muc/dam-cong-so-kk/index.html">Đầm công sở</a></li>
-                        <li><a href="danh-muc/vay-dam-da-hoi/index.html">Đầm dạ hội</a></li>
-                        <li><a href="danh-muc/phu-kien/index.html">Phụ kiện</a></li>
-                        <li><a href="danh-muc/vay-chong-nang-kk/index.html">Váy chống nắng</a></li>
-                        <li><a href="danh-muc/ao-nu/index.html">Áo sơ mi nữ</a></li>
+                       <li><a href="http://kkfashion.vn/danh-muc/dam-cong-so-kk">Đầm công sở</a></li>
+                        <li><a href="http://kkfashion.vn/danh-muc/vay-dam-da-hoi">Đầm dạ hội</a></li>
+                        <li><a href="http://kkfashion.vn/danh-muc/phu-kien">Phụ kiện</a></li>
+                        <li><a href="http://kkfashion.vn/danh-muc/vay-chong-nang-kk/">Váy chống nắng</a></li>
+                        <li><a href="http://kkfashion.vn/danh-muc/ao-nu/">Áo sơ mi nữ</a></li>
 						<li><a href="http://girly.vn/tag/nhung-cau-noi-hay-ve-tinh-yeu/">Tình yêu</a></li>
-						<li><a href="chinh-sach-bao-mat-van-chuyen-giao-nhan-va-doi-hang/index.html">Chính sách bảo mật</a></li>
+						<li><a href="http://kkfashion.vn/chinh-sach-bao-mat-van-chuyen-giao-nhan-va-doi-hang">Chính sách bảo mật</a></li>
                     </ul>
                 </div>
                
@@ -18,35 +18,35 @@
                     <p>Bộ sưu tập</p>
                      <ul>
                     <ul>
-                                                    <li><a href="impressive-dresses-2/index.html">Impressive Dresses</a></li>
-                                                     <li><a href="summer-is-awesome-2/index.html">Summer is awesome</a></li>
-                                                     <li><a href="lets-dress-up/index.html">Let’s dress up</a></li>
-                                                     <li><a href="time-for-myself-2/index.html">Time for myself</a></li>
+                                                    <li><a href="http://kkfashion.vn/impressive-dresses-2/">Impressive Dresses</a></li>
+                                                     <li><a href="http://kkfashion.vn/summer-is-awesome-2/">Summer is awesome</a></li>
+                                                     <li><a href="http://kkfashion.vn/lets-dress-up/">Let’s dress up</a></li>
+                                                     <li><a href="http://kkfashion.vn/time-for-myself-2/">Time for myself</a></li>
                                              </ul>
                     </ul>
                 </div>
                 <div class="col-md-15 kk-shop-columns">
                     <p>Tin tức</p>
                     <ul>
-                                                <li><a href="cam-nang-lam-dep-don-tet-cho-nang-cong-so-ban-ron/index.html">Cẩm nang làm đẹp đón tết cho nàng công sở bận rộn</a></li>
-                                             <li><a href="100968-2/index.html">4 gợi ý mặc đẹp đón Xuân cùng K&amp;K Fashion</a></li>
-                                             <li><a href="len-do-dep-don-tet-cung-kk-fashion/index.html">Lên đồ đẹp đón tết cùng K&amp;K Fashion</a></li>
+                                                <li><a href="http://kkfashion.vn/khoi-dong-tuan-dau-nam-that-phong-cach/">Khởi động tuần đầu năm thật phong cách</a></li>
+                                             <li><a href="http://kkfashion.vn/cam-nang-lam-dep-don-tet-cho-nang-cong-so-ban-ron/">Cẩm nang làm đẹp đón tết cho nàng công sở bận rộn</a></li>
+                                             <li><a href="http://kkfashion.vn/100968-2/">4 gợi ý mặc đẹp đón Xuân cùng K&amp;K Fashion</a></li>
                                          </ul>
                 </div>
                 <div class="col-md-15 kk-shop-columns">
                     <p>Lookbook</p>
                     <ul>
-                                                    <li><a href="enjoying-tet/index.html">Enjoying Tết</a></li>
-                                                     <li><a href="wonderful-tet/index.html">Wonderful Tết</a></li>
-                                                     <li><a href="warm-my-heart/index.html">Warm My Heart</a></li>
+                                                    <li><a href="http://kkfashion.vn/enjoying-tet/">Enjoying Tết</a></li>
+                                                     <li><a href="http://kkfashion.vn/wonderful-tet/">Wonderful Tết</a></li>
+                                                     <li><a href="http://kkfashion.vn/warm-my-heart/">Warm My Heart</a></li>
                                              </ul>
                 </div>
                 <div class="col-md-15 kk-shop-columns">
                     <p>Khuyến mại</p>
                     <ul>
-                                                    <li><a href="tung-bung-qua-tang-ngay-83-cung-kk-fashion/index.html">Tưng bừng quà tặng ngày 8/3 cùng K&amp;K Fashion</a></li>
-                                                     <li><a href="chuong-trinh-mung-xuan-ron-rang-nhan-ngan-qua-tang/index.html">Chương trình “Mừng Xuân rộn ràng – Nhận ngàn quà tặng”</a></li>
-                                                     <li><a href="thoi-trang-cong-so-kk-fashion-big-sale-off-nhan-dip-2010/index.html">Thời trang công sở K&amp;K Fashion BIG SALE OFF nhân dịp 20/10</a></li>
+                                                    <li><a href="http://kkfashion.vn/tung-bung-qua-tang-ngay-83-cung-kk-fashion/">Tưng bừng quà tặng ngày 8/3 cùng K&amp;K Fashion</a></li>
+                                                     <li><a href="http://kkfashion.vn/chuong-trinh-mung-xuan-ron-rang-nhan-ngan-qua-tang/">Chương trình “Mừng Xuân rộn ràng – Nhận ngàn quà tặng”</a></li>
+                                                     <li><a href="http://kkfashion.vn/thoi-trang-cong-so-kk-fashion-big-sale-off-nhan-dip-2010/">Thời trang công sở K&amp;K Fashion BIG SALE OFF nhân dịp 20/10</a></li>
                                              </ul>
                 </div>
             </div>
@@ -108,7 +108,7 @@ window.newsletter_check = function (f) {
                         <p><a href="#">Chính sách bảo mật của K&amp;K Fashion</a></p>
                         <p>Thời trang nữ - Thời trang công sở K&amp;K Fashion 2016</p>
                         <p>® Bản quyền thuộc thời trang K&amp;K Fashion</p>
-                        <p>Tag: <a href="san-pham/thoi-trang-cong-so/index.html">Thời trang công sở</a>, <a href="danh-muc/vay-chong-nang-kk/index.html">Váy chống nắng</a>, <a href="san-pham/vay-dam-cong-so/index.html">Váy công sở</a>, <a href="danh-muc/dam-cong-so-kk/index.html">Đầm công sở</a></p>
+                        <p>Tag: <a href="http://kkfashion.vn/san-pham/thoi-trang-cong-so/">Thời trang công sở</a>, <a href="http://kkfashion.vn/danh-muc/vay-chong-nang-kk/">Váy chống nắng</a>, <a href="http://kkfashion.vn/san-pham/vay-dam-cong-so/">Váy công sở</a>, <a href="http://kkfashion.vn/danh-muc/dam-cong-so-kk/">Đầm công sở</a></p>
                     </div>
                 </div>
                 <div class="col-md-6 company">
@@ -247,46 +247,46 @@ window.newsletter_check = function (f) {
                 <div class="col-sm-3 kk-shop-columns">
                     <p>Shop Online</p>
                     <ul>
-                        <li><a href="danh-muc/dam-cong-so-kk/index.html">Đầm công sở</a></li>
-                        <li><a href="danh-muc/vay-dam-da-hoi/index.html">Đầm dạ hội</a></li>
-                        <li><a href="danh-muc/phu-kien/index.html">Phụ kiện</a></li>
-                        <li><a href="danh-muc/vay-chong-nang-kk/index.html">Váy chống nắng</a></li>
-                        <li><a href="danh-muc/ao-nu/index.html">Áo sơ mi nữ</a></li>
+                        <li><a href="http://kkfashion.vn/danh-muc/dam-cong-so-kk">Đầm công sở</a></li>
+                        <li><a href="http://kkfashion.vn/danh-muc/vay-dam-da-hoi">Đầm dạ hội</a></li>
+                        <li><a href="http://kkfashion.vn/danh-muc/phu-kien">Phụ kiện</a></li>
+                        <li><a href="http://kkfashion.vn/danh-muc/vay-chong-nang-kk/">Váy chống nắng</a></li>
+                        <li><a href="http://kkfashion.vn/danh-muc/ao-nu/">Áo sơ mi nữ</a></li>
                         <li><a href="http://girly.vn/tag/nhung-cau-noi-hay-ve-tinh-yeu/">Tình yêu</a></li>
-                        <li><a href="chinh-sach-bao-mat-van-chuyen-giao-nhan-va-doi-hang/index.html">Chính sách bảo mật</a></li>
+                        <li><a href="http://kkfashion.vn/chinh-sach-bao-mat-van-chuyen-giao-nhan-va-doi-hang">Chính sách bảo mật</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3 kk-shop-columns">
                     <p>Bộ sưu tập</p>
                     <ul>
                         <ul>
-                                                            <li><a href="impressive-dresses-2/index.html">Impressive Dresses</a></li>
-                                                            <li><a href="summer-is-awesome-2/index.html">Summer is awesome</a></li>
-                                                            <li><a href="lets-dress-up/index.html">Let’s dress up</a></li>
-                                                            <li><a href="time-for-myself-2/index.html">Time for myself</a></li>
+                                                            <li><a href="http://kkfashion.vn/impressive-dresses-2/">Impressive Dresses</a></li>
+                                                            <li><a href="http://kkfashion.vn/summer-is-awesome-2/">Summer is awesome</a></li>
+                                                            <li><a href="http://kkfashion.vn/lets-dress-up/">Let’s dress up</a></li>
+                                                            <li><a href="http://kkfashion.vn/time-for-myself-2/">Time for myself</a></li>
                                                     </ul>
                     </ul>
                 </div>
                 <div class="col-sm-3 kk-shop-columns">
                     <p>Tin tức</p>
                     <ul>
-                                                    <li><a href="cam-nang-lam-dep-don-tet-cho-nang-cong-so-ban-ron/index.html">Cẩm nang làm đẹp đón tết cho nàng công sở bận rộn</a></li>
-                                                    <li><a href="100968-2/index.html">4 gợi ý mặc đẹp đón Xuân cùng K&amp;K Fashion</a></li>
+                                                    <li><a href="http://kkfashion.vn/khoi-dong-tuan-dau-nam-that-phong-cach/">Khởi động tuần đầu năm thật phong cách</a></li>
+                                                    <li><a href="http://kkfashion.vn/cam-nang-lam-dep-don-tet-cho-nang-cong-so-ban-ron/">Cẩm nang làm đẹp đón tết cho nàng công sở bận rộn</a></li>
                                             </ul>
                 </div>
                 <div class="col-sm-3 kk-shop-columns">
                     <p>Lookbook</p>
                     <ul>
-                                                    <li><a href="enjoying-tet/index.html">Enjoying Tết</a></li>
-                                                    <li><a href="wonderful-tet/index.html">Wonderful Tết</a></li>
-                                                    <li><a href="warm-my-heart/index.html">Warm My Heart</a></li>
+                                                    <li><a href="http://kkfashion.vn/enjoying-tet/">Enjoying Tết</a></li>
+                                                    <li><a href="http://kkfashion.vn/wonderful-tet/">Wonderful Tết</a></li>
+                                                    <li><a href="http://kkfashion.vn/warm-my-heart/">Warm My Heart</a></li>
                                             </ul>
                 </div>
                 <div class="col-sm-3 kk-shop-columns">
                     <p>Khuyến mại</p>
                     <ul>
-                                                    <li><a href="tung-bung-qua-tang-ngay-83-cung-kk-fashion/index.html">Tưng bừng quà tặng ngày 8/3 cùng K&amp;K Fashion</a></li>
-                                                    <li><a href="chuong-trinh-mung-xuan-ron-rang-nhan-ngan-qua-tang/index.html">Chương trình “Mừng Xuân rộn ràng – Nhận ngàn quà tặng”</a></li>
+                                                    <li><a href="http://kkfashion.vn/tung-bung-qua-tang-ngay-83-cung-kk-fashion/">Tưng bừng quà tặng ngày 8/3 cùng K&amp;K Fashion</a></li>
+                                                    <li><a href="http://kkfashion.vn/chuong-trinh-mung-xuan-ron-rang-nhan-ngan-qua-tang/">Chương trình “Mừng Xuân rộn ràng – Nhận ngàn quà tặng”</a></li>
                                             </ul>
                 </div>
             </div>
@@ -363,7 +363,7 @@ window.newsletter_check = function (f) {
                         <p><a href="#">Chính sách bảo mật của K&amp;K Fashion</a></p>
                         <p>Thời trang nữ - Thời trang công sở K&amp;K Fashion 2016</p>
                         <p>® Bản quyền thuộc thời trang K&amp;K Fashion</p>
-                        <p>Tag: <a href="san-pham/thoi-trang-cong-so/index.html">Thời trang công sở</a>, <a href="danh-muc/vay-chong-nang-kk/index.html">Váy chống nắng</a>, <a href="san-pham/vay-dam-cong-so/index.html">Váy công sở</a>, <a href="danh-muc/dam-cong-so-kk/index.html">Đầm công sở</a></p>
+                        <p>Tag: <a href="http://kkfashion.vn/san-pham/thoi-trang-cong-so/">Thời trang công sở</a>, <a href="http://kkfashion.vn/danh-muc/vay-chong-nang-kk/">Váy chống nắng</a>, <a href="http://kkfashion.vn/san-pham/vay-dam-cong-so/">Váy công sở</a>, <a href="http://kkfashion.vn/danh-muc/dam-cong-so-kk/">Đầm công sở</a></p>
                     </div>
                 </div>
                 <div class="col-sm-12 company">

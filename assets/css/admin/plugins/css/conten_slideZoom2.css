@@ -1,0 +1,139 @@
+/*======== all ========*/
+.w_100{
+    width: 100%;
+}
+
+/*======== margin ========*/
+.mg_5_0 {
+    margin: 5px 0px;
+}
+.mg_bot15 {
+    margin-bottom: 15px;
+}
+/*======== fonts ========*/
+.f14b_959595{
+    font-size: 14px;
+    font-weight: bold;
+    color: #959595;
+}
+
+/*======== line-height ========*/
+.line_height_22{
+    line-height: 22px;
+}
+
+
+/*======== more ========*/
+
+.ov_hidden{
+    overflow: hidden;
+}
+.list_left{
+    margin: 5px 0px;
+    padding: 5px 15px;
+    border: 1px solid #d4d4d4;
+    overflow: hidden;
+}
+.list_left ul li {
+    padding: 5px 10px;
+}
+.list_left ul li a{
+    font-size: 12px;
+    color: #212121;
+}
+.prod_left{
+    text-align: center;
+    margin: 15px 0px;
+}
+.box_title_x{
+    background: #0f9ba3;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.back_link{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.back_link:hover{
+    color: #f09903;
+}
+.back_link:hover{
+    color: #f09903;
+}
+.name_prod_list{
+    font-size: 14px;
+    font-weight: bold;
+    color: #878989;
+}
+.name_prod_list:hover{
+    color: #f09903;
+}
+.text_price{
+    font-size: 14px;
+    font-weight: bold;
+    color: #f07d02;
+}
+.number_price{
+    font-size: 14px;
+    font-weight: bold;
+    color: #f00202;
+}
+.number_price_old{
+    font-size: 14px;
+    font-weight: bold;
+    color: #6f6f6f;
+}
+.name_prod_detail{
+    font-size: 14px;
+    font-weight: bold;
+    color: #878989;
+    margin-bottom: 5px;
+}
+.number_price_detail{
+    font-size: 24px !important;
+    color: #f00202 !important;
+    margin-bottom: 5px;
+}
+.text_price_detail{
+    font-size: 14px;
+    font-weight: bold;
+    color: #f07d02;
+    margin-bottom: 5px;
+}
+.news_des_detail,
+.titie_des{
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 5px;
+}
+.price_old_detail{
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 5px;
+}
+.buy_pro{
+    overflow: hidden;
+    width: 150px;
+    height: 40px;
+    background: #009fa8;
+    padding: 8px;
+    text-align: center;
+}
+.buy_pro a{
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.buy_pro:hover a{
+    color: #FBFF00;
+}
+.prod_info{
+    margin: 15px 0px;
+}
+.prod_info img{
+    max-width: 100%;
+}

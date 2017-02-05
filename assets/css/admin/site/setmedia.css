@@ -1,0 +1,109 @@
+
+
+@media (max-width:480px) {
+    .col-480-12{
+        width: 100% !important;
+    }
+
+    .pro_box_title {
+        background: 0 !important;
+
+    }}
+
+@media (max-width:767px)  {
+    .clearfix-xs {
+        clear: both;
+        width: 100%;
+    }
+    .cart_shop {
+        border-left: 0 !important;
+    }
+    .link_top li {
+        margin-top: 2px !important;
+        margin-bottom: 3px !important;
+    }
+    .hotline_top {
+        margin-top: 4px !important;
+    }
+    .list_header{
+        padding-top: 0px !important;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {\
+     .clearfix-sm {
+        clear: both;
+        width: 100%;
+    }
+    .list_header{
+        padding-top: 0px !important;
+    }
+    .link_top li {
+        margin-top: 2px !important;
+        margin-bottom: 3px !important;
+    }
+    .hotline_top {
+        margin-top: 4px !important;
+    }
+
+}
+
+@media (min-width:992px) and (max-width:1199px) /* md*/{
+    .clearfix-md {
+        clear: both;
+        width: 100%;
+    }
+    .link_top li {
+        margin-top: 2px !important;
+        margin-bottom: 3px !important;
+    }
+    .hotline_top {
+        margin-top: 4px !important;
+    }
+    .row_pc{
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .menu-item > .menu-link {
+        padding: 15px 8px !important;
+    }
+    .has-dropdown:after {
+        right: -1px !important;
+    }
+}
+
+@media (min-width:1200px) /* lg*/ {
+    .clearfix-md {
+        clear: both;
+        width: 100%;
+    }
+    .row_pc{
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .container{
+        width: 1200px;
+    }
+    .sb-search-input {
+        top: 31px !important;
+        width: 200px !important;
+        border: 1px solid #E9EC23 !important;
+    }
+    .sb-icon-search {
+        line-height: 28px;
+        color: #fff;
+        background: 0 !important;
+    }
+    .search_box{
+        width: 25px !important;
+    }
+    .top_main{
+        margin: 13px 0px;
+    }
+    .sub_prod_detail{
+        /*padding-left: 40px;*/
+        overflow: hidden;
+    }
+}
+
