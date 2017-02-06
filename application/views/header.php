@@ -4,18 +4,18 @@
         <meta name="viewport" id="viewport" content="user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0" />
         <link rel="shortcut icon" href="<?= base_url($this->option->site_favicon) ?>"/>
         <link href="<?= base_url('assets/css/site/bootstrap.min.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/bootstrap-theme.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/flexslider.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/jquery.mCustomScrollbar.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/responsive-phone.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/responsive-ipad.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/responsive-desktop.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/editor.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/owl.carousel.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/owl.theme.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/prism.css') ?>" rel="stylesheet"/>
-        <link href="<?= base_url('assets/css/custom.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/bootstrap-theme.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/flexslider.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/style.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/jquery.mCustomScrollbar.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/responsive-phone.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/responsive-ipad.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/responsive-desktop.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/editor.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/owl.carousel.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/owl.theme.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/prism.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/custom/asset/css/custom.css') ?>" rel="stylesheet"/>
         <script type="text/javascript" src="<?= base_url('assets/js/site/jquery-1.11.1.min.js') ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/site/bootstrap.min.js') ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/site/nav-menu3.js') ?>"></script><!--menu-->
@@ -48,56 +48,92 @@
                         </ul>
                     </div>
                     <ul class="nav-top hidden-lg hidden-md hidden-sm" style="display: block;">
-                        <li>
-                            <a href="gioi-thieu/index.html">Giới thiệu</a>
-
-
-                        </li>
-                        <li>
-                            <a href="#" class="parent">Shop online</a>
-
-                            <ul>
-                                <li><a href="danh-muc/dam-cong-so-kk/index.html">+ Đầm công sở</a></li>
-
-                                <li><a href="danh-muc/vay-dam-da-hoi/index.html">+ Váy đầm dạ hội</a></li>
-
-                                <li><a href="danh-muc/vay-chong-nang-kk/index.html">+ Váy chống nắng</a></li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="huong-dan-mua/index.html" class="parent">Hướng dẫn mua hàng</a>
-
-                            <ul>
-                                <li><a href="huong-dan-mua/index.html">+ Các bước mua hàng</a></li>
-
-                                <li><a href="huong-dan-mua/quy-dinh-doi-hang/index.html">+ Quy định đổi hàng</a></li>
-
-                                <li><a href="huong-dan-mua/thong-tin-tai-khoan/index.html">+ Tài khoản ngân hàng</a></li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="category/lookbook/index.html">Lookbook</a>
-
-
-                        </li>
-                        <li>
-                            <a href="category/video/index.html">Video</a>
-
-
-                        </li>
-                        <li>
-                            <a href="category/tin-tuc/index.html">Tin tức</a>
-
-
-                        </li>
-                        <li>
-                            <a href="lien-he/index.html">Liên hệ</a>
-
-
-                        </li>
+                        <li> <a href="<?= base_url() ?>" class="menu-link">Trang chủ</a> </li>
+                        <?php
+                        foreach ($menus as $menu) {
+                            if ($menu->parent_id == 0) {
+                                ?>
+                                <li 
+                                    >
+                                    <a target="<?= $menu->target ?>" <?php if ($menu->url != 'null') echo 'href="' . site_url($menu->url) . '"' ?>
+                                       class="<?php check_hassub($menu->id_menu, $menu_sub); ?>" title="<?= $menu->name; ?>"><?= $menu->name; ?></a>
+                                    <ul >
+                                        <?php
+                                        foreach ($menu_sub as $sub) {
+                                            if ($menu->id_menu == $sub->parent_id) {
+                                                ?>
+                                                <li 
+                                                    >
+                                                    <a target="<?= $sub->target ?>"  <?php if ($sub->url != 'null') echo 'href="' . site_url($sub->url) . '"' ?>
+                                                       title="<?= $sub->name; ?>">
+                                                           <?= $sub->name; ?>
+                                                    </a>
+                                                </li>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+                                    </ul>
+                                </li>
+                                <?php
+                            }
+                        }
+                        ?>
                     </ul>
+
+
+
+                    <!--                    <ul class="nav-top hidden-lg hidden-md hidden-sm" style="display: block;">
+                                            <li>
+                                                <a href="gioi-thieu/index.html">Giới thiệu</a>
+                    
+                    
+                                            </li>
+                                            <li>
+                                                <a href="#" class="parent">Shop online</a>
+                    
+                                                <ul>
+                                                    <li><a href="danh-muc/dam-cong-so-kk/index.html">+ Đầm công sở</a></li>
+                    
+                                                    <li><a href="danh-muc/vay-dam-da-hoi/index.html">+ Váy đầm dạ hội</a></li>
+                    
+                                                    <li><a href="danh-muc/vay-chong-nang-kk/index.html">+ Váy chống nắng</a></li>
+                    
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="huong-dan-mua/index.html" class="parent">Hướng dẫn mua hàng</a>
+                    
+                                                <ul>
+                                                    <li><a href="huong-dan-mua/index.html">+ Các bước mua hàng</a></li>
+                    
+                                                    <li><a href="huong-dan-mua/quy-dinh-doi-hang/index.html">+ Quy định đổi hàng</a></li>
+                    
+                                                    <li><a href="huong-dan-mua/thong-tin-tai-khoan/index.html">+ Tài khoản ngân hàng</a></li>
+                    
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="category/lookbook/index.html">Lookbook</a>
+                    
+                    
+                                            </li>
+                                            <li>
+                                                <a href="category/video/index.html">Video</a>
+                    
+                    
+                                            </li>
+                                            <li>
+                                                <a href="category/tin-tuc/index.html">Tin tức</a>
+                    
+                    
+                                            </li>
+                                            <li>
+                                                <a href="lien-he/index.html">Liên hệ</a>
+                    
+                    
+                                            </li>
+                                        </ul>-->
                     <div class="form-search hidden hidden-lg hidden-md hidden-sm">
                         <form id="searchform" method="get" role="search" action="http://kkfashion.vn/">
                             <input type="text" placeholder="Nhập mã sản phẩm cần tìm..." class="sb-search-input" name="s" id="search">
@@ -140,6 +176,40 @@
                         <nav class="navbar navbar-inverse">
                             <div class="container-fluid">
                                 <div>
+
+                                    <ul class="nav navbar-nav" >
+                                        <li class="dropdown"> <a href="<?= base_url() ?>" class="menu-link">Trang chủ</a> </li>
+                                        <?php
+                                        foreach ($menus as $menu) {
+                                            if ($menu->parent_id == 0) {
+                                                ?>
+                                                <li class="dropdown"
+                                                    >
+                                                        <?php if (check_hassub($menu->id_menu, $menu_sub)) {
+                                                            ?>
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $menu->name; ?><span class="caret"></span></a>
+                                                        <?php
+                                                        foreach ($menu_sub as $sub) {
+                                                            if ($menu->id_menu == $sub->parent_id) {
+                                                                ?>
+                                                            <li class="dropdown"
+                                                                >
+                                                                <a target="<?= $sub->target ?>"  <?php if ($sub->url != 'null') echo 'href="' . site_url($sub->url) . '"' ?>
+                                                                   title="<?= $sub->name; ?>">
+                                                                       <?= $sub->name; ?>
+                                                                </a>
+                                                            </li>
+                                                            <?php
+                                                        }
+                                                    }
+                                                }
+                                                ?>
+                                                </li>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+                                    </ul>
                                     <ul class="nav navbar-nav">
                                         <li class="dropdown">
                                             <a href="gioi-thieu/index.html">Giới thiệu</a>
@@ -234,7 +304,40 @@
                                             </div>
                                         </div>
                                         <div class="collapse navbar-collapse m-p" id="bs-example-navbar-collapse-1">
-
+                                    <ul class="nav navbar-nav pull-right" >
+                                        <li class="dropdown"> <a href="<?= base_url() ?>" class="menu-link">Trang chủ</a> </li>
+                                        <?php
+                                        foreach ($menus as $menu) {
+                                            if ($menu->parent_id == 0) {
+                                                ?>
+                                                <li class="dropdown">
+                                                        <?php if (check_hassub1($menu->id_menu, $menu_sub) ==true) {
+                                                            ?>
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $menu->name; ?><span class="caret"></span></a>
+                                                         <ul class="dropdown-menu">
+                                                        <?php
+                                                        foreach ($menu_sub as $sub) {
+                                                            if ($menu->id_menu == $sub->parent_id) {
+                                                                ?>
+                                                                  <li> <a href="<?= site_url($sub->url) ?>"><?= $sub->name?></a></li>
+                                                            
+                                                            <?php
+                                                             }
+                                                             }?>
+                                                                  </ul>
+                                                                  <?php
+                                                      } else {?>
+                                                            <a href="<?= site_url($menu->url) ?>"><?= $menu->name?></a>
+                                                            <?php 
+                                                      }?>
+                                                
+                                                </li>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+                                    </ul>
+<!--                                    </ul>
                                             <ul class="nav navbar-nav pull-right">
                                                 <li class="dropdown">
                                                     <a href="gioi-thieu/index.html">Giới thiệu</a>
@@ -284,7 +387,7 @@
 
                                                 </li>
 
-                                            </ul>
+                                            </ul>-->
                                         </div>
                                     </div>
                                 </nav>
@@ -331,15 +434,15 @@
             <script type="text/javascript">
                 var ww = document.body.clientWidth;
 
-                $(document).ready(function() {
-                    $(".nav-top li a").each(function() {
+                $(document).ready(function () {
+                    $(".nav-top li a").each(function () {
                         if ($(this).next().length > 0) {
                             $(this).addClass("parent");
                         }
                         ;
                     })
 
-                    $(".toggleMenu").click(function(e) {
+                    $(".toggleMenu").click(function (e) {
                         e.preventDefault();
                         $(this).toggleClass("active");
                         $(".nav-top").toggle();
@@ -347,12 +450,12 @@
                     adjustMenu();
                 })
 
-                $(window).bind('resize orientationchange', function() {
+                $(window).bind('resize orientationchange', function () {
                     ww = document.body.clientWidth;
                     adjustMenu();
                 });
 
-                var adjustMenu = function() {
+                var adjustMenu = function () {
                     if (ww < 768) {
                         $(".toggleMenu").css("display", "inline-block");
                         if (!$(".toggleMenu").hasClass("active")) {
@@ -361,18 +464,17 @@
                             $(".nav-top").show();
                         }
                         $(".nav-top li").unbind('mouseenter mouseleave');
-                        $(".nav-top li a.parent").unbind('click').bind('click', function(e) {
+                        $(".nav-top li a.parent").unbind('click').bind('click', function (e) {
                             // must be attached to anchor element to prevent bubbling
                             e.preventDefault();
                             $(this).parent("li").toggleClass("hover");
                         });
-                    }
-                    else if (ww >= 768) {
+                    } else if (ww >= 768) {
                         $(".toggleMenu").css("display", "none");
                         $(".nav-top").show();
                         $(".nav-top li").removeClass("hover");
                         $(".nav-top li a").unbind('click');
-                        $(".nav-top li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
+                        $(".nav-top li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function () {
                             // must be attached to li so that mouseleave is not triggered when hover over submenu
                             $(this).toggleClass('hover');
                         });
@@ -381,9 +483,9 @@
 
             </script>
             <script type="text/javascript" charset="utf-8">
-                jQuery(window).ready(function() {
+                jQuery(window).ready(function () {
 
-                    jQuery('#search-mb').click(function() {
+                    jQuery('#search-mb').click(function () {
                         if (jQuery('.form-search').hasClass('hidden')) {
                             jQuery('.form-search').removeClass('hidden');
                         } else {

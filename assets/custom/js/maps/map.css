@@ -1,0 +1,477 @@
+
+
+/*places block*/
+
+.places_index_block {
+
+    background: #ffffff;
+
+    padding: 110px 0px;
+
+}
+
+.place_index_item {
+
+    margin-bottom: 40px;
+
+}
+
+.place_index_item .place_inn {}
+
+.pl_descr {
+
+    border: 1px solid #e4e4e4;
+
+    border-top: 0px;
+
+    border-bottom-left-radius: 3px;
+
+    border-bottom-right-radius: 3px;
+
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+
+    padding: 25px;
+
+}
+
+.pl_descr a {
+
+    font-size: 18px;
+
+    display: block;
+
+    margin-bottom: 10px;
+
+}
+
+.pl_descr span {
+
+    font-size: 15px;
+
+    font-weight: 300;
+
+    line-height: 24px;
+
+}
+
+.pl_descr .rate {
+
+    padding: 0px;
+
+    margin-top: 15px;
+
+    margin-bottom: 0px;
+
+}
+
+.pl_descr .rate li {
+
+    list-style: none;
+
+    display: inline-block;
+
+    color: #FFCB00;
+
+    padding-right: 2px;
+
+}
+
+.pl_descr .rate li i {}
+
+.pl_descr .rate li i.no {
+
+    color: #DADADA;
+
+}
+
+.pl_descr .rate li i:hover {
+
+    color: #FF9100;
+
+    cursor: pointer;
+
+}
+
+.place_inn img {
+
+    width: 100%;
+
+}
+
+
+
+
+
+/*------------------------------------------------------------------
+
+[3. Map Page styles / #Map Page styles]
+
+*/
+
+.map {
+
+    width: 100%;
+
+    height: 550px;
+
+   
+
+}
+
+
+
+/*menu*/
+
+.menu {
+
+    position: absolute;
+
+    z-index: 9;
+
+    background: rgba(37, 32, 48, 0.9);
+
+    width: 100%;
+
+    bottom: 0px;
+
+    max-height: 65px;
+
+    overflow: hidden;
+
+    margin: 0px;
+
+    padding: 0px;
+
+}
+
+.menu.mobile #close_menu {display: none;}
+
+.menu ul {
+
+    padding: 0px;
+
+    text-align: center;
+
+    max-width: 1190px;
+
+    margin: 0 auto;
+
+}
+
+.menu li {
+
+    list-style: none;
+
+    display: inline-block;
+
+    width: 10%;
+
+    margin: 0px -2px;
+
+    padding: 0px;
+
+}
+
+.menu li a {
+
+    display: block;
+
+    color: rgba(255, 255, 255, 1);
+
+    font-size: 26px;
+
+    font-weight: normal;
+
+    text-align: center;
+
+    padding: 11px 0px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+}
+
+.menu ul li a span {}
+
+.menu li a.shop:hover, .menu li a.shop:focus {
+
+    background: #F54100;
+
+    transition: 0.3s;
+
+}
+
+.menu li a.cinema:hover, .menu li a.cinema:focus {
+
+    background: #00B2B3;
+
+    transition: 0.3s;
+
+}
+
+.menu li a.club:hover, .menu li a.club:focus {
+
+    background: #FFAC00;
+
+    transition: 0.3s;
+
+}
+
+.menu li a.cafe:hover, .menu li a.cafe:focus {
+
+    background: #62B50A;
+
+    transition: 0.3s;
+
+}
+
+.menu li a.sport:hover, .menu li a.sport:focus {
+
+    background: #DD3D83;
+
+    transition: 0.3s;
+
+}
+
+.menu li a.port:hover, .menu li a.port:focus {
+
+    background: #006EC6;
+
+    transition: 0.3s;
+
+}
+
+.menu li a.bank:hover, .menu li a.bank:focus {
+
+    background: #0081DB;
+
+    transition: 0.3s;
+
+}
+
+.menu li a.post:hover, .menu li a.post:focus {
+
+    background: #AAC600;
+
+    transition: 0.3s;
+
+}
+
+.menu li a.showplace:hover, .menu li a.showplace:focus {
+
+    background: #009ECC;
+
+    transition: 0.3s;
+
+}
+
+.menu li a.park:hover, .menu li a.park:focus {
+
+    background: #006BC3;
+
+    transition: 0.3s;
+
+}
+
+.container-fluid.menu span, .container-fluid.menu .icon-remove, .container-fluid.menu .mobile_menu {display: none;}
+
+
+
+.marker_info .info {
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 5px;
+
+    background: rgba(37, 32, 48, 0.9);
+
+    position: relative;
+
+    z-index: 9999999;
+
+}
+
+
+
+.marker_info .info img {
+
+    display: block;
+
+    border-radius: 100px;
+
+    width: 110px;
+
+    position: absolute;
+
+    top: -53px;
+
+    left: 95px;
+
+    border: 7px solid #e9e5db;
+
+    background: #ffffff;
+
+}
+
+
+
+.marker_info .info h2 {
+
+    text-align: center;
+
+    padding-top: 70px;
+
+    font-family: "Roboto Condensed";
+
+    font-weight: 300;
+
+    color: #ffffff;
+
+	font-size:25px;
+
+}
+
+.marker_info .info h2 span {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: #E73931;
+
+    display: block;
+
+    margin: 10px auto;
+
+}
+
+.marker_info .info span {
+
+    font-family: 'Roboto', sans-serif;
+
+    font-weight: 300;
+
+    color: #FFFFFF;
+
+    line-height: 22px;
+
+    text-align: center;
+
+    display: block;
+
+    padding: 0px 30px;
+
+    font-size: 14px;
+
+}
+
+.marker_info .info a {}
+
+a.green_btn {
+
+    background: #E73931;
+
+    border: 1px solid #000000;
+
+    padding: 10px 50px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    border-radius: 4px;
+
+    display: block;
+
+    width: 180px;
+
+    text-align: center;
+
+    bottom: 30px;
+
+    position: absolute;
+
+    left: 60px;
+
+    transition: 0.3s;
+
+}
+
+a.green_btn:hover {
+
+    background: #ffffff; /* Old browsers */
+
+    border: 1px solid #000000;
+
+    padding: 10px 50px;
+
+    color: #E73931;
+
+    font-size: 14px;
+
+    box-shadow: none;
+
+    border-radius: 4px;
+
+    display: block;
+
+    width: 180px;
+
+    text-align: center;
+
+    bottom: 30px;
+
+    position: absolute;
+
+    left: 60px;
+
+    text-decoration: none;
+
+}
+
+.marker_info .arrow {
+
+  width: 0px;
+
+  height: 0px;
+
+  position: absolute;
+
+  padding: 0px !important;
+
+  left: 135px;
+
+  top: 300px !important;
+
+  border: 14px solid rgba(255, 0, 0, 0);
+
+  top: 0px;
+
+  border-right-color: rgba(37, 32, 48, 0.9);
+
+  -ms-transform: rotate(-90deg);
+
+  -webkit-transform: rotate(-90deg);
+
+  transform: rotate(-90deg);
+
+}
+
+.info .rating img{
+
+  position: relative;
+
+  border: none;
+
+  background: transparent;
+
+  top: 0;
+
+  left: 0;
+
+  margin: 10px auto;
+
+}

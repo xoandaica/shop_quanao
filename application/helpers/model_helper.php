@@ -885,11 +885,23 @@ function get_alias($cat_id,$arr_cat){
 function check_hassub($id_root,$arr_sub){
     foreach($arr_sub as $v){
         if($v->parent_id==$id_root){
-            echo  'has-dropdown ';
+//            echo  'has-dropdown ';
+            echo 'parent';
         }
         else echo ' ';
     }
 }
+
+function check_hassub1($id_root,$arr_sub){
+     foreach($arr_sub as $v){
+        if($v->parent_id==$id_root){
+//            echo  'has-dropdown ';
+            return true;
+        }
+        return false;
+    }
+}
+
 function check_active($id_root,$arr_sub){
     foreach($arr_sub as $v){
         if($v->category_id==$id_root){

@@ -1,0 +1,1 @@
+function changefutureimg(i){jQuery("#mainfutured").attr("src",i)}
