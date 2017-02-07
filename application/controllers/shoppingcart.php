@@ -1,9 +1,11 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
-class Shoppingcart extends MY_Controller
-{
-    function __construct()
-    {
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+class Shoppingcart extends MY_Controller {
+
+    function __construct() {
         parent::__construct();
         $this->load->model('f_shoppingcartmodel');
         $this->load->helper('text');
@@ -12,8 +14,7 @@ class Shoppingcart extends MY_Controller
     }
 
     //index
-    public function baokim_BPN()
-    {
+    public function baokim_BPN() {
         $seo = array(
             'title' => 'Thanh Toán Bảo Kim',
             'description' => 'Thanh  Toán Bảo Kim',
@@ -24,8 +25,7 @@ class Shoppingcart extends MY_Controller
         $this->LoadFooter();
     }
 
-    public function baokim_request()
-    {
+    public function baokim_request() {
         if (isset($_SESSION['info_baokim'])) {
             unset($_SESSION['info_baokim']);
         }
@@ -39,8 +39,7 @@ class Shoppingcart extends MY_Controller
         $this->LoadFooter();
     }
 
-    public function order_baokim()
-    {
+    public function order_baokim() {
         $this->load->helper('model_helper');
         if (isset($_POST['sendcart_bk'])) {
             $arr = array(
@@ -80,8 +79,8 @@ class Shoppingcart extends MY_Controller
                     'item_id' => $_POST['item_id'][$i],
                     'count' => $_POST['count'][$i],
                     'price_sale' => $_POST['price_sale'][$i],
-                    /* 'color'=>$_POST['color'][$i],
-                     'size'=>$_POST['size'][$i],*/
+                        /* 'color'=>$_POST['color'][$i],
+                          'size'=>$_POST['size'][$i], */
                 );
                 $this->f_shoppingcartmodel->Update('product', $temp_item->id, array(
                     'bought' => $buyted
@@ -254,8 +253,7 @@ class Shoppingcart extends MY_Controller
         $this->LoadFooter();
     }
 
-    public function order_payment()
-    {
+    public function order_payment() {
         $check_cart = $_SESSION['cart'];
         if ($check_cart == null) {
             redirect(base_url());
@@ -290,8 +288,8 @@ class Shoppingcart extends MY_Controller
                     'item_id' => $_POST['item_id'][$i],
                     'count' => $_POST['count'][$i],
                     'price_sale' => $_POST['price_sale'][$i],
-                    /* 'color'=>$_POST['color'][$i],
-                     'size'=>$_POST['size'][$i],*/
+                        /* 'color'=>$_POST['color'][$i],
+                          'size'=>$_POST['size'][$i], */
                 );
                 $this->f_shoppingcartmodel->Update('product', $temp_item->id, array(
                     'bought' => $buyted
@@ -408,13 +406,11 @@ class Shoppingcart extends MY_Controller
             }
             if (isset($_SESSION['cart'])) {
                 unset($_SESSION['cart']);
-
             }
             if ($id) {
                 $_SESSION['mss_success'] = "Bạn đã đặt hàng thành công!!!";
             }
             redirect($_SERVER['HTTP_REFERER']);
-
         }
         $data['cart'] = @$_SESSION['cart'];
         $count = 0;
@@ -455,8 +451,7 @@ class Shoppingcart extends MY_Controller
         $this->LoadFooter();
     }
 
-    public function check_out()
-    {
+    public function check_out() {
         $this->load->helper('model_helper');
         if (isset($_POST['sendcart'])) {
             $arr = array(
@@ -485,8 +480,8 @@ class Shoppingcart extends MY_Controller
                     'item_id' => $_POST['item_id'][$i],
                     'count' => $_POST['count'][$i],
                     'price_sale' => $_POST['price_sale'][$i],
-                    /* 'color'=>$_POST['color'][$i],
-                     'size'=>$_POST['size'][$i],*/
+                        /* 'color'=>$_POST['color'][$i],
+                          'size'=>$_POST['size'][$i], */
                 );
                 $this->f_shoppingcartmodel->Update('product', $temp_item->id, array(
                     'bought' => $buyted
@@ -496,51 +491,51 @@ class Shoppingcart extends MY_Controller
                     $_SESSION['mss_success'] = "Bạn đã đặt hàng thành công!!!";
                 }
                 /*       if($id_order_item){
-                           $config = Array(
-                               'protocol'  => 'smtp',
-                               'smtp_host' => 'ssl://smtp.googlemail.com',
-                               'smtp_port' => 465,
-                               'smtp_user' => 'trantrung129@vnnetsoft.com', // change it to yours
-                               'smtp_pass' => 'trungtrung129@@', // change it to yours
-                               'mailtype'  => 'html',
-                               'charset'   => 'utf-8',
-                               'wordwrap'  => TRUE
-                           );
-                           $this->load->library('email', $config);
+                  $config = Array(
+                  'protocol'  => 'smtp',
+                  'smtp_host' => 'ssl://smtp.googlemail.com',
+                  'smtp_port' => 465,
+                  'smtp_user' => 'trantrung129@vnnetsoft.com', // change it to yours
+                  'smtp_pass' => 'trungtrung129@@', // change it to yours
+                  'mailtype'  => 'html',
+                  'charset'   => 'utf-8',
+                  'wordwrap'  => TRUE
+                  );
+                  $this->load->library('email', $config);
 
-                           $subject = 'Thông tin liên hệ - '.'order_id';
-                           $message = '<p>Thông tin của khách hàng liên hệ như sau:</p>';
-                           $message .='<p>Họ và tên :'.'item_id'.',<p>';
-                           $message .='<p>Số điện thoại :'.'count'.'</p>';
-                           $message .='<p>Email :'.'price_sale'.'</p>';
+                  $subject = 'Thông tin liên hệ - '.'order_id';
+                  $message = '<p>Thông tin của khách hàng liên hệ như sau:</p>';
+                  $message .='<p>Họ và tên :'.'item_id'.',<p>';
+                  $message .='<p>Số điện thoại :'.'count'.'</p>';
+                  $message .='<p>Email :'.'price_sale'.'</p>';
 
-                           $message .='<p>Nội dung :'.$this->input->post('comment').'</p>';
-                           // Get full html:
-                           $body =
-                               '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-                               <html xmlns="http://www.w3.org/1999/xhtml">
-                               <head>
-                                   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-                                   <title>' . htmlspecialchars($subject, ENT_QUOTES, $this->email->charset) . '</title>
-                               <style type="text/css">
-                                   body {
-                                       font-family: Arial, Verdana, Helvetica, sans-serif;
-                                       font-size: 16px;
-                                   }
-                               </style>
-                           </head>
-                           <body>
-                           ' . $message . '
-                           </body>
-                           </html>';
-                           $this->email->set_newline("\r\n");
-                           $this->email->from($this->input->post('email'),$this->input->post('full_name')); // change it to yours
-                           $this->email->to('bangoctrung89@gmail.com'); // change it to yours
-                           $this->email->subject($subject);
-                           $this->email->message($body);
-                           $this->email->send();
-                           $_SESSION['message']="Bạn đã gửi thông tin thành công!!!";
-                       } */
+                  $message .='<p>Nội dung :'.$this->input->post('comment').'</p>';
+                  // Get full html:
+                  $body =
+                  '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                  <html xmlns="http://www.w3.org/1999/xhtml">
+                  <head>
+                  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                  <title>' . htmlspecialchars($subject, ENT_QUOTES, $this->email->charset) . '</title>
+                  <style type="text/css">
+                  body {
+                  font-family: Arial, Verdana, Helvetica, sans-serif;
+                  font-size: 16px;
+                  }
+                  </style>
+                  </head>
+                  <body>
+                  ' . $message . '
+                  </body>
+                  </html>';
+                  $this->email->set_newline("\r\n");
+                  $this->email->from($this->input->post('email'),$this->input->post('full_name')); // change it to yours
+                  $this->email->to('bangoctrung89@gmail.com'); // change it to yours
+                  $this->email->subject($subject);
+                  $this->email->message($body);
+                  $this->email->send();
+                  $_SESSION['message']="Bạn đã gửi thông tin thành công!!!";
+                  } */
             }
             unset($_SESSION['cart']);
             redirect(base_url('thanh-toan-dat-hang'));
@@ -590,9 +585,7 @@ class Shoppingcart extends MY_Controller
         $this->LoadFooter();
     }
 
-
-    public function quickbuy()
-    {
+    public function quickbuy() {
         if (isset($_POST['sendProfiler'])) {
             $arr = array(
                 'fullname' => $this->input->post('hoten'),
@@ -624,18 +617,16 @@ class Shoppingcart extends MY_Controller
         redirect(base_url('thanh-toan-dat-hang'));
     }
 
-    public function Payment()
-    {
+    public function Payment() {
         $this->LoadHeader($this->site_name, $this->site_keyword, $this->site_description);
         $this->load->view('payment');
         $this->LoadFooter();
     }
 
-    public function add_cart()
-    {
+    public function add_cart() {
         $id = $this->input->post('id');
 //        $quantity=$this->input->post('quantity');
-        $id = (int)$id;
+        $id = (int) $id;
         $row = $this->f_shoppingcartmodel->getFirstRowWhere('product', array('id' => $id));
         //  print_r($row);
         //echo "<pre>";var_dump($row);die();
@@ -645,10 +636,10 @@ class Shoppingcart extends MY_Controller
 
             $old = ($_SESSION['cart'][$id]);
             /*   if ($this->language == 1) {
-                   $count   = ($old['qty1'] + 1);
-                   }elseif ($this->language == 1) {
-                   $count   = ($old['qty2'] + 1);
-               }*/
+              $count   = ($old['qty1'] + 1);
+              }elseif ($this->language == 1) {
+              $count   = ($old['qty2'] + 1);
+              } */
             $_SESSION['cart'][$id] = array(
                 'rowid' => $id,
                 'alias' => $row->alias,
@@ -683,14 +674,14 @@ class Shoppingcart extends MY_Controller
         $rs['count'] = $count;
         $rs['totalPrice'] = $totalPrice;
         $rs['mess'] = $_SESSION['messege'];
+        $_SESSION['totalProduct'] = $count;
         echo json_encode($rs);
     }
 
-    public function add_cart_pro()
-    {
+    public function add_cart_pro() {
         $id = $this->input->post('id');
         $quantity = $this->input->post('quantity');
-        $id = (int)$id;
+        $id = (int) $id;
         $row = $this->f_shoppingcartmodel->getFirstRowWhere('product', array('id' => $id));
         //        print_r($row); die($id);
         //echo "<pre>";var_dump($row);die();
@@ -710,7 +701,6 @@ class Shoppingcart extends MY_Controller
             );
             $_SESSION['messege'] = 'Sản phẩm đã cập nhật vào giỏ hàng của bạn!';
             $rs['status'] = true;
-
         } else {
             $_SESSION['cart'][$id] = array(
                 'rowid' => $id,
@@ -735,11 +725,10 @@ class Shoppingcart extends MY_Controller
         echo json_encode($rs);
     }
 
-    public function add_liked()
-    {
+    public function add_liked() {
 //        $alias=$this->input->post('alias');
         $id = $this->input->post('id');
-        $id = (int)$id;
+        $id = (int) $id;
         $row = $this->f_shoppingcartmodel->getFirstRowWhere('product', array('id' => $id));
         $_SESSION['messege'] = '';
         $rs['status'] = false;
@@ -780,7 +769,7 @@ class Shoppingcart extends MY_Controller
             $_SESSION['messege'] = 'Sản phẩm được bạn quan tâm!';
             $rs['status'] = true;
         }
-        $trangthai=0;
+        $trangthai = 0;
         $count = 0;
         $name = ' a';
         foreach ($_SESSION['liked'] as $v) {
@@ -797,8 +786,7 @@ class Shoppingcart extends MY_Controller
     }
 
     //ajax
-    public function update_cart()
-    {
+    public function update_cart() {
         if (isset($_POST['id']) && isset($_POST['qty'])) {
             $old = $_SESSION['cart'][$_POST['id']];
             $new = array(
@@ -826,36 +814,34 @@ class Shoppingcart extends MY_Controller
 //            redirect($_SERVER['HTTP_REFERER']);
     }
 
-    public function delete($id)
-    {
+    public function delete($id) {
         unset($_SESSION['cart'][$id]);
         redirect($_SERVER['HTTP_REFERER']);
     }
 
-    public function delete_like($id)
-    {
+    public function delete_like($id) {
         unset($_SESSION['liked'][$id]);
         redirect($_SERVER['HTTP_REFERER']);
     }
 
-    public function destroy_cart()
-    {
+    public function destroy_cart() {
         if (isset($_SESSION['cart'])) {
             unset($_SESSION['cart']);
+        }
+        if (isset($_SESSION['totalProduct'])) {
+            unset($_SESSION['totalProduct']);
         }
         redirect(base_url());
     }
 
-    public function getdistric()
-    {
+    public function getdistric() {
         if (isset($_POST['id'])) {
             $list = $this->f_shoppingcartmodel->Get_where('district', array('provinceid' => $_POST['id']));
             echo json_encode($list);
         }
     }
 
-    public function getward()
-    {
+    public function getward() {
         if (isset($_POST['id'])) {
             $list = $this->f_shoppingcartmodel->Get_where('ward', array('districtid' => $_POST['id']));
             echo json_encode($list);
@@ -863,8 +849,7 @@ class Shoppingcart extends MY_Controller
     }
 
     //Update shipping
-    public function update_shipping()
-    {
+    public function update_shipping() {
         if (isset($_POST['price_sale'])) {
             $price_ship = $_POST['price_sale'];
             $count = 0;
@@ -882,8 +867,7 @@ class Shoppingcart extends MY_Controller
         //            redirect($_SERVER['HTTP_REFERER']);
     }
 
-    public function check_sale()
-    {
+    public function check_sale() {
         if (isset($_POST['code'])) {
             $data['check'] = false;
             $item = $this->f_shoppingcartmodel->getFirstRowWhere('code_sale', array('code' => $_POST['code']));
@@ -896,4 +880,5 @@ class Shoppingcart extends MY_Controller
             echo json_encode($data);
         }
     }
+
 }

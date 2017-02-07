@@ -2,8 +2,8 @@
 <div class="row">
     <div class="cates-header">
         <div class="list-cates-hd" style="margin-left: 30px;">
-            <div class="break_crum text-uppercase">
-                <a href="<?= base_url(); ?>">Trang chủ</a>
+            <br><br><br>
+            <div class="break_crum text-uppercase head-infomation ">
                 <i class="fa fa-angle-right"></i>&nbsp; Đăng ký thành công
             </div>
         </div>
@@ -43,7 +43,7 @@
         <section class="content_about" style="margin-top: -10px;">
             <div style="text-shadow:0px 0px 15px #f9ff5f; color:#596067; margin-top:25px; font-size: 20px;
                         border-bottom: 1px solid #ccc; padding-bottom: 10px;">
-                Thông tin đăng ký!
+                Cảm ơn quý khách đã đăng ký tài khoản!
             </div><br> <div class="clearfix-10"></div>
             <?php if(isset($_GET['reset'])){?>
 
@@ -63,18 +63,13 @@
                 if(isset($u)){?>
                     <div class="confirm" >
 
-                        <p>Cảm ơn quý khách đã đăng ký tài khoản! </p>
-                        <p> Chúng tôi đã gửi một email vào địa chỉ hòm thư <b><a href="https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1"> <?=@$u->email;?></a></b>, vui lòng kiểm tra và kích hoạt tài khoản của quý khách.</p>
-                        <p>Quý khách lưu ý kiểm tra hòm thư trong tất cả thư mục (bao gồm Inbox và Bulk mail) để tìm thư đến từ địa chỉ
-                            <b><a href=""><?= $this->site_email?></a></b>. Đôi khi do đường truyền mà email có thể đến chậm 5-10 phút.</p>
-
-                        <p>  Quý khách chỉ thực sự hoàn tất thủ tục đăng ký thành viên sau khi đã kích hoạt tài khoản được gửi từ mail kích hoạt  <b><a href="<?= base_url()?>"><?= $this->site_email?></a></b>. </p>
 
                         <p>  Khi cần trợ giúp, vui lòng gọi <b><?= $this->hotline1?></b> hoặc <b><?= $this->hotline2?></b> (Giờ hành chính: 8h15-18h00)</p>
 
-                        <p> Email hỗ trợ kỹ thuật <?= $this->site_email?> nếu quý khách không nhận được thông tin kích hoạt tài khoản.</p>
+                        <p> Email hỗ trợ kỹ thuật <?= $this->site_email?> nếu quý khách gặp trục trặc kĩ thuật.</p>
 
                     </div>
+                <br><br><br>
                 <?php }else{?>
                     <div class="confirm" >
 
@@ -82,9 +77,10 @@
 
 
 
-                        <p> Email hỗ trợ kỹ thuật <?= $this->site_email?> nếu quý khách không nhận được thông tin kích hoạt tài khoản.</p>
+                        <p> Email hỗ trợ kỹ thuật <?= $this->site_email?> nếu quý khách gặp trục trặc kĩ thuật</p>
 
                     </div>
+                <br><br><br>
                 <?php }
             }?>
 

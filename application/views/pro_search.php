@@ -2,90 +2,53 @@
     <div class="container">
         <div class="row_pc">
 
-            <div class="tit_home">
-                <a >
-                Danh sách tìm kiếm
-                </a>
-            </div>
             <div class="clearfix"></div>
             <div class="list_prod_home">
-                <div class="row">
-                    <?php $count = 0;
-                    if ($list != null) {
-                    foreach ($list as $p) { $count++; ?>
-                        <div class="col-md-3 col-sm-4 col-xs-6 col-480-12">
-                            <div class="box_prod_home">
-                                <div class="img_prod_home">
-                                    <a class="h_15"
-                                       href="<?= site_url($p->cat_alias . '/' . $p->alias . '-c' . $p->cat_id . 'p' . $p->id) ?>"
-                                       title="<?= $p->name ?>">
-                                        <img class="w_100" src="<?= base_url($p->image) ?>"
-                                             alt="<?= $p->name ?>"/>
-                                    </a>
-                                    <div class="view_prod_detail" style="display: none">
-                                        <?= LimitString($p->description,110) ?>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                                <div class="sub_prod_home">
-                                    <div class="name_prod_home">
-                                        <a href="<?= site_url($p->cat_alias . '/' . $p->alias . '-c' . $p->cat_id . 'p' . $p->id) ?>"
-                                           title="<?= $p->name ?>">
-                                            <?= $p->name ?>
+                <div class="kk-shop">
+                    <div class="row">
+                        <?php
+                        $count = 0;
+                        if ($list != null) {
+                            foreach ($list as $p) {
+                                $count++;
+                                ?>
+                                <div class="col-md-3 col-sm-4 col-xs-6 kk-item">
+                                    <div class="kk-image">
+                                        <a
+                                            href="<?= site_url($p->cat_alias . '/' . $p->alias . '-c' . $p->cat_id . 'p' . $p->id) ?>"
+                                            title="<?= $p->name ?>">
+                                            <img  width="227" height="340" class="attachment-235x340 size-235x340 wp-post-image" src="<?= base_url($p->image) ?>"
+                                                  alt="<?= $p->name ?>"/>
                                         </a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="prince_retail clearfix">
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <div class="row">
-                                                <div class="prince_new_retail">Giá lẻ: <span
-                                                        style="font-size: 14px; color: #ff0000; font-weight: bold">
-                                                           <?= $p->price_sale > 0 ? ' ' . number_format($p->price_sale) . 'đ' : lang('contact') ?>
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <div class="row">
-                                                <?php if ($p->price != null)  { ?>
-                                                    <del class="prince_old_retail pull-right"><?= number_format($p->price)?>đ</del>
-                                                <?php } ?>
+                                        <span><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/new.png" alt=""></span>
+                                        <div class="kk-size hidden-xs hidden-sm">
+                                            <div class="size">
+                                                <span class="pull-left">Size</span>
+                                                <span class="pull-right">
+                                                    <ul>
+                                                        <li id="dsize_s" onclick="xaddcart('s')" itemid="s">S</li>
+                                                        <li id="dsize_m" onclick="xaddcart('m')" itemid="m">M</li>
+                                                        <li id="dsize_l" onclick="xaddcart('l')" itemid="l">L</li>
+                                                        <li id="dsize_xl" onclick="xaddcart('xl')" itemid="xl">XL</li>
+                                                    </ul>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <div class="row">
-
-                                                <div class="prince_wholesale_retail">Giá sỉ: <span
-                                                        style="font-size: 14px; color: #ff0000; font-weight: bold">
-                                                        <?= $p->desc > 0 ? ' ' . number_format($p->desc) . 'đ' : lang('contact') ?>
-                                                    </span>
-                                                </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <div class="row">
-                                            <div class="pull-right">
-                                                <a style="cursor: pointer;"
-                                                   onclick="add_cart(<?= @$p->id; ?>)" class="fa fa-shopping-cart cart_pro_home"></a>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div class="kk-name"><a href="shop/dam-cong-so-kk63-43/index.html"><?= $p->alias ?></a></div>
+                                    <div class="kk-price"><span class="amount"><?= $p->price_sale > 0 ? ' ' . number_format($p->price_sale) . 'đ' : lang('contact') ?></span> VNĐ</div>
                                 </div>
-                            </div>
-                        </div>
-                        <?php  if ($count % 4 == 0 )echo '<div class="clearfix-md"></div>';
-                        if ($count % 3 == 0 )echo '<div class="clearfix-sm"></div>';
-                        if ($count % 2 == 0 )echo '<div class="clearfix-xs"></div>';
-                    } } else echo '<div style="padding-left: 15px;">Không có kết quả tìm kiếm</div>' ?>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
             <div class="clearfix"></div>
 
             <div class="list_paging" style="text-align: center; margin-bottom: 25px">
-                <?php   echo $this->pagination->create_links(); // tạo link phân trang ?>
+<?php echo $this->pagination->create_links(); // tạo link phân trang  ?>
             </div>
 
 
