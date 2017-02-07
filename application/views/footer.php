@@ -384,4 +384,33 @@ window.newsletter_check = function (f) {
             <!-- /footer ipad -->
 
         </div>
+    <div id="show_added" style="position: fixed; top: 20px; right: 20px;z-index: 9999"></div>
+    <div id="show_success_mss" style="position: fixed; top: 20px; right: 20px; z-index: 9999">
+        <?php if (isset($_SESSION['mss_success'])) { ?>
+            <div class="alert-ml col-xs-12 alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <?= $_SESSION['mss_success']; ?>
+            </div>
+            <?php
+            unset($_SESSION['mss_success']);
+        }?>
+    </div>
+    <script>
+        setTimeout(function () {
+            $('#show_success_mss').fadeOut().empty();
+        }, 5000)
+    </script>
+    <script type="text/javascript">
+        function base_url() {
+            return '<?php echo base_url();?>';
+        }
+        $(document).ready(function () {
+            $(".validate").validationEngine();
+        });
+    </script>
+    <script type="text/javascript" src="<?= base_url('assets/plugin/ValidationEngine/js/jquery.validationEngine.js') ?>"></script>
+    <script type="text/javascript" src="<?= base_url('assets/plugin/ValidationEngine/js/jquery.validationEngine-en.js') ?>"></script>
+    <link href="<?= base_url('assets/plugin/ValidationEngine/style/validationEngine.jquery.css') ?>" rel="stylesheet"
+          media="all"/>
     </footer>

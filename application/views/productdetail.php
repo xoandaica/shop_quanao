@@ -43,7 +43,7 @@
                         </a>
                     </div> 
                     <div class="item">
-                        <img id="mainfutured" src="<?= base_url($pro_first->image)?>"  class="img-thumbnail" />
+                        <img id="mainfutured" src="<?= base_url($pro_first->image) ?>"  class="img-thumbnail" />
                     </div>
                 </div>
                 <div class="col-md-8 col-sm-7">
@@ -51,13 +51,18 @@
                         <h1 class="name"><?= $pro_first->name ?></h1>
                         <div class="detail">
                             <div itemprop="description">
-                                <p>Ao 250k Vay 270k</p>
-                                <p>Áo trắng và chân váy bút chì ren đỏ</p>
+                                <p><?= $pro_first->description ?></p>
                             </div>                            <p>
                                 <span class="tags pull-left">Tags:  Đầm công sở</span>
 
                             <div class="cart pull-right">
-                                <a href="http://kkfashion.vn/cart/"><i class="fa fa-cart-plus"></i> Giỏ hàng <span class="number-cart">0</span></a> 
+                                <a href="<?= base_url('gio-hang') ?>"><i class="fa fa-cart-plus"></i> Giỏ hàng <span class="number-cart"><?php
+                                        if (isset($_SESSION['totalProduct'])) {
+                                            echo $_SESSION['totalProduct'];
+                                        } else {
+                                            echo '0';
+                                        }
+                                        ?></span></a> 
                             </div>
                             </p>
                             <div class="clearfix"></div>
@@ -70,8 +75,8 @@
                         <div class="row color-size">
                             <div class="col-md-6 col-sm-6">
                                 <span class="color"> 
-                                    <p><span class="bold">Màu sắc:</span> ........</p>
-                                    <p><span class="bold">Chất liệu:</span> ........</p>
+                                    <p><span class="bold">Màu sắc:</span><?= $pro_first->color ?></p>
+                                    <p><span class="bold">Chất liệu:</span> <?= $pro_first->origin ?></p>
 
                                     <!--<p><span class="bold">Đánh giá:</span> <img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/rato.png"></p>-->
                                 </span>
@@ -91,39 +96,38 @@
                         <div class="btn-control">
                             <div class="row" id="bdesktop">
 
-                                <form class="variations_form cart" method="post"  enctype='multipart/form-data' >
-                                    <table class="variations" cellspacing="0">
-                                        <tbody>
-                                            <tr>
-                                                <td class="label"></td>
-                                                <td class="value">
-                                                    <select id="pa_size" class="" name="attribute_pa_size" data-attribute_name="attribute_pa_size"><option value="">Chọn một tùy chọn</option><option value="s"  selected='selected'>S</option><option value="m" >M</option><option value="l" >L</option><option value="xl" >XL</option></select>						</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <!--<form class="variations_form cart" method="post"  enctype='multipart/form-data' >-->
+                                <table class="variations" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="label"></td>
+                                            <td class="value">
+                                                <select id="pa_size" class="" name="attribute_pa_size" data-attribute_name="attribute_pa_size"><option value="">Chọn một tùy chọn</option><option value="s"  selected='selected'>S</option><option value="m" >M</option><option value="l" >L</option><option value="xl" >XL</option></select>						</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
 
-                                    <div class="single_variation_wrap" style="display:none;">
-                                        <div class="single_variation"></div>		<div class="variations_button">
-                                            <div class="quantity"><input type="number" step="1"   name="quantity" value="1" title="SL" class="input-text qty text" size="4" /></div>
-                                            <button type="submit" class="single_add_to_cart_button button alt">Thêm vào giỏ</button>
-                                            <input type="hidden" name="add-to-cart" value="99485" />
-                                            <input type="hidden" name="product_id" value="99485" />
-                                            <input type="hidden" name="variation_id" class="variation_id" value="" />
-                                        </div>
+                                <div class="single_variation_wrap" style="display:none;">
+                                    <div class="single_variation"></div>		<div class="variations_button">
+                                        <div class="quantity"><input type="number" step="1"   name="quantity" value="1" title="SL" class="input-text qty text" size="4" /></div>
+                                        <button type="submit" class="single_add_to_cart_button button alt">Thêm vào giỏ</button>
+                                        <input type="hidden" name="add-to-cart" value="99485" />
+                                        <input type="hidden" name="product_id" value="99485" />
+                                        <input type="hidden" name="variation_id" class="variation_id" value="" />
                                     </div>
+                                </div>
 
-                                    <input type="hidden" name="variation_id" value="" />
-                                    <input type="hidden" class="input-text qty text" title="Qty" value="1" name="quantity" step="1">
-                                    <button type="submit" class="single_add_to_cart_button btn-addcart">Cho vào giỏ hàng</button>
+                                <input type="hidden" name="variation_id" value="" />
+                                <input type="hidden" class="input-text qty text" title="Qty" value="1" name="quantity" step="1">
+                                <button class="single_add_to_cart_button btn-addcart" onclick="add_cart(<?= $pro_first->id; ?>)">Cho vào giỏ hàng</button>
+                                <div><input type="hidden" name="product_id" value="99485" /></div>
 
-                                    <div><input type="hidden" name="product_id" value="99485" /></div>
-
-                                </form>
+                                <!--                                </form>-->
                                 <script type="text/javascript">
                                     function checkadd() {
                                         flag = false;
-                                        $('.detail-size li').each(function() {
+                                        $('.detail-size li').each(function () {
                                             if ($(this).hasClass('active')) {
                                                 flag = true;
                                             }
@@ -134,7 +138,8 @@
                                         return flag;
                                     }
                                 </script>
-                                <a href="../dam-cong-so-kk63-41/index.html" rel="prev"><button class="btn-continue">Xem tiếp</button></a>                            </div>
+                                <!--<a href="../dam-cong-so-kk63-41/index.html" rel="prev"><button class="btn-continue">Xem tiếp</button></a>-->     
+                            </div>
                         </div>
                         <div class="share-btn">
                             <ul>
@@ -151,7 +156,7 @@
                             <script type="text/javascript">
 
 
-                                jQuery(document).ready(function($) {
+                                jQuery(document).ready(function ($) {
 
                                     jQuery("#owl-demo").owlCarousel({
                                         items: 3,
@@ -160,7 +165,7 @@
                                         navigation: true,
                                         navigationText: ["<img src='http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/btn-prev-2.png'>", "<img src='http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/btn-next-2.png'>"],
                                         itemsTablet: [768, 3],
-                                        afterInit: function(el) {
+                                        afterInit: function (el) {
                                             el.find(".owl-item").eq(0).addClass("synced");
                                         }
                                     });
@@ -193,7 +198,7 @@
                     <div class="tab-content">
                         <div align="center" id="step-1" class="tab-pane fade in active">
                             <?php foreach ($product_image as $img) { ?>
-                                <img class="img-thumbnail" src="<?= base_url($img->link) ?>" alt="<?= $pro_first->name ?>" title="<?= $pro_first->name?>" />
+                                <img class="img-thumbnail" src="<?= base_url($img->link) ?>" alt="<?= $pro_first->name ?>" title="<?= $pro_first->name ?>" />
                             <?php } ?>
                             <div class="multi-size cart-table">
                                 <table width="600" >
@@ -444,11 +449,6 @@
 
                                         <ul class="products">
                                             <ul>
-
-
-
-
-
                                                 <li>
                                                     <div class="prothumb" ele="99485">
 
@@ -459,13 +459,6 @@
                                                     <p> <a href="index.html">Đầm công sở<br />KK63-43</a></p>
                                                     <p ><b>520.000 VNĐ</b></p>
                                                 </li>
-
-
-
-
-
-
-
                                                 <li>
                                                     <div class="prothumb" ele="99483">
 
@@ -476,13 +469,6 @@
                                                     <p> <a href="../dam-cong-so-kk63-42/index.html">Đầm công sở<br />KK63-42</a></p>
                                                     <p ><b>440.000 VNĐ</b></p>
                                                 </li>
-
-
-
-
-
-
-
                                                 <li>
                                                     <div class="prothumb" ele="99481">
 
@@ -493,13 +479,6 @@
                                                     <p> <a href="../dam-cong-so-kk63-41/index.html">Đầm công sở<br />KK63-41</a></p>
                                                     <p ><b>410.000 VNĐ</b></p>
                                                 </li>
-
-
-
-
-
-
-
                                                 <li>
                                                     <div class="prothumb" ele="99479">
 
@@ -510,13 +489,6 @@
                                                     <p> <a href="../dam-cong-so-kk63-40/index.html">Đầm công sở<br />KK63-40</a></p>
                                                     <p ><b>440.000 VNĐ</b></p>
                                                 </li>
-
-
-
-
-
-
-
                                                 <li>
                                                     <div class="prothumb" ele="99477">
 
