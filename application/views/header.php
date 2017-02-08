@@ -299,7 +299,7 @@
                         <div class="row">
                             <div class="col-md-12 login-cart-search">
                                 <div class="search">
-                                    <form action="<?= base_url('tim-kiem') ?>" role="search" id="searchform">>
+                                    <form action="<?= base_url('tim-kiem') ?>" role="search" id="searchform">
                                         <input class="search-input" style=" top: 60% !important;" placeholder=" Nhập sản phẩm..." type="text" value="" name="key" id="search">
                                         <a href="javascript:void(0)" onclick="$('#searchform').submit()"><i class="fa fa-search"></i></a>
                                     </form>

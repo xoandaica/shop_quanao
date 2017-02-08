@@ -315,22 +315,23 @@ function check_emails_code(val) {
 }
 
 function check_capcha() {
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: base_url() + 'users_frontend/check_capcha',
-        data: {capcha: $('#captcha_input').val(), challenge: $('#captcha_check').val()},
-        success: function (result) {
-            if (result.check == true) {
-                $('#singup_form').submit();
-            } else {
-                $('#error_capcha').html('MĂ£ xĂ¡c nháº­n khĂ´ng chĂ­nh xĂ¡c!');
-                setTimeout(function () {
-                    $('#error_capcha').empty();
-                }, 5000);
-            }
-        }
-    });
+    $('#singup_form').submit();
+//    $.ajax({
+//        type: "POST",
+//        dataType: "json",
+//        url: base_url() + 'users_frontend/check_capcha',
+//        data: {capcha: $('#captcha_input').val(), challenge: $('#captcha_check').val()},
+//        success: function (result) {
+//            if (result.check == true) {
+//                $('#singup_form').submit();
+//            } else {
+//                $('#error_capcha').html('MĂ£ xĂ¡c nháº­n khĂ´ng chĂ­nh xĂ¡c!');
+//                setTimeout(function () {
+//                    $('#error_capcha').empty();
+//                }, 5000);
+//            }
+//        }
+//    });
 }
 
 function refresh_capcha() {

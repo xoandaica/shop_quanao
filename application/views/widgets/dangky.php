@@ -27,9 +27,10 @@
         <div class="modal-content">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    <div class="panel-title">Đăng ký
-                        <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">×</span></button>
+                    <div class="panel-title">
+                        Đăng ký
+<!--                        <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>-->
                     </div>
                 </div>
                 <div style="padding-top:30px" class="panel-body">
@@ -66,9 +67,10 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            
                             <label for="lastname" class="col-md-3 control-label">Tỉnh thành</label>
                             <div class="col-md-9">
-                                <select name="location" class="form-control input-sm">
+                                <select name="location" class="form-control ">
                                     <option value="">Lựa chọn</option>
                                     <?php
                                     foreach (@$province as $t) {
@@ -95,7 +97,7 @@
                                        name="repassword" placeholder="Nhập lại mật khẩu">
                             </div>
                         </div>
-                        <div class="form-group">
+<!--                        <div class="form-group">
                             <label for="password" class="col-md-3 control-label">Mã xác nhận</label>
                             <div class="col-md-9">
                                 <div style="position: relative">
@@ -114,7 +116,7 @@
                                     <input type="text" id="captcha_input" value="" class="form-control input-sm">
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="form-group">
                             <!-- Button -->
                             <div class="col-md-offset-3 col-md-9">

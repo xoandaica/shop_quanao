@@ -53,7 +53,7 @@
                             <div itemprop="description">
                                 <p><?= $pro_first->description ?></p>
                             </div>                            <p>
-                                <span class="tags pull-left">Tags:  Đầm công sở</span>
+                                <!--<span class="tags pull-left">Tags:  Đầm công sở</span>-->
 
                             <div class="cart pull-right">
                                 <a href="<?= base_url('gio-hang') ?>"><i class="fa fa-cart-plus"></i> Giỏ hàng <span class="number-cart"><?php

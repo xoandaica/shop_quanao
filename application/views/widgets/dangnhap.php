@@ -52,7 +52,7 @@
             <div class="panel panel-success" >
                 <div class="panel-heading">
                     <div class="panel-title">Đăng nhập
-                        <button  type="button" class="close pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+<!--                        <button  type="button" class="close pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>-->
                     </div>
                 </div>
                 <div style="padding-top:30px" class="panel-body" >
