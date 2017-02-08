@@ -1,29 +1,23 @@
 <article>
-    <div class="container">
-        <div class="row_pc">
-            <div class="col-md-3 col-sm-3 col-left hidden-xs">
-                <?= $right ?>
-            </div>
-            <div class="col-md-9 col-sm-9 col-xs-12">
-                <div class="box_title_x  w_100 back_link">
-                    <a href="<?= base_url()?>" class="" title="">TRANG CHỦ </a>
-                    <i class="fa fa-angle-right" style="color: #17100a"></i>
-
-                    <?= @$page->title?>
-                </div>
-                <div class="clearfix"></div>
-                <div class="list_prod_home" style="padding-top: 5px;">
-                    <div class="">
-
-                        <div class=" list_prod_cate page-content">
-                            <?= @$page->content?>
-                        </div>
+    <div class="content-page">
+        <div class="kk-new-page post-detail-page">
+            <div class="container">
+                <div class="row headding-page">
+                    <div class="col-md-12">
+                        <div class="new-headding"><a style="color:#000;" class="lookbook-head-title" href="#"><span>Giới thiệu</span></a></div>
                     </div>
-                    <div class="clearfix"></div>
-                    <div class="list_paging" style="text-align: center; margin-bottom: 25px"><img src="img/paging.png"
-                                                                                                  alt=""/></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row new-detail-content entry-content">
+                            <h1 class="detail-title"> <?= @$page->title ?></h1>
 
 
+                            <?= @$page->content ?>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

@@ -56,7 +56,7 @@
                                 <li 
                                     >
                                     <a target="<?= $menu->target ?>" <?php if ($menu->url != 'null') echo 'href="' . site_url($menu->url) . '"' ?>
-                                       class="<?php check_hassub($menu->id_menu, $menu_sub); ?>" title="<?= $menu->name; ?>"><?= $menu->name; ?></a>
+                                       class="<?php check_hassub1($menu->id_menu, $menu_sub); ?>" title="<?= $menu->name; ?>"><?= $menu->name; ?></a>
                                     <ul >
                                         <?php
                                         foreach ($menu_sub as $sub) {
@@ -375,12 +375,13 @@
                                         <div class="collapse navbar-collapse m-p" id="bs-example-navbar-collapse-1">
                                             <ul class="nav navbar-nav pull-right" >
                                                 <li class="dropdown"> <a href="<?= base_url() ?>" class="menu-link">Trang chủ</a> </li>
+                                                
                                                 <?php
                                                 foreach ($menus as $menu) {
                                                     if ($menu->parent_id == 0) {
                                                         ?>
                                                         <li class="dropdown">
-                                                            <?php if (check_hassub1($menu->id_menu, $menu_sub) == true) {
+                                                            <?php if (check_hassub1($menu->id_menu, $menu_sub)) {
                                                                 ?>
                                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $menu->name; ?><span class="caret"></span></a>
                                                                 <ul class="dropdown-menu">
@@ -389,7 +390,6 @@
                                                                         if ($menu->id_menu == $sub->parent_id) {
                                                                             ?>
                                                                             <li> <a href="<?= site_url($sub->url) ?>"><?= $sub->name ?></a></li>
-
                                                                             <?php
                                                                         }
                                                                     }

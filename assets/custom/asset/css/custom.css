@@ -668,6 +668,14 @@ hr {
     padding: 15px 20px;
     float: left;
 }
+.kk-title-new-4 {
+    background: rgb(255, 255, 255);
+    position: relative;
+    width: 100%;
+    z-index: 999;
+    padding: 15px 20px;
+    float: left;
+}
 .kk-title-new-3 {
     background: rgb(255, 255, 255);
     position: relative;
@@ -676,7 +684,7 @@ hr {
     padding: 15px 20px;
     float: right;
 }
-.kk-title-new-2 a, .kk-title-new-3 a {
+.kk-title-new-2 a, .kk-title-new-3 a, .kk-title-new-4 a{
     color: #000;
     font-weight: 600;
     text-transform: uppercase;
