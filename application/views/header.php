@@ -16,6 +16,9 @@
         <link href="<?= base_url('assets/custom/asset/css/owl.theme.css') ?>" rel="stylesheet"/>
         <link href="<?= base_url('assets/custom/asset/css/prism.css') ?>" rel="stylesheet"/>
         <link href="<?= base_url('assets/custom/asset/css/custom.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/plugin/woocommerce/css/woocommerce-layout18f6.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/plugin/woocommerce/css/woocommerce-smallscreen18f6.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/plugin/woocommerce/css/woocommerce18f6.css') ?>" rel="stylesheet"/>
         <script type="text/javascript" src="<?= base_url('assets/js/site/jquery-1.11.1.min.js') ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/site/bootstrap.min.js') ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/site/nav-menu3.js') ?>"></script><!--menu-->

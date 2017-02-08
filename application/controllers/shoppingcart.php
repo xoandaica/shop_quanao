@@ -816,6 +816,12 @@ class Shoppingcart extends MY_Controller {
 
     public function delete($id) {
         unset($_SESSION['cart'][$id]);
+        $count = 0;
+        foreach ($_SESSION['cart'] as $v) {
+            $count += $v['qty'];
+            $totalPrice += $v['qty'] * $v['price_sale'];
+        }
+        $_SESSION['totalProduct'] = $count;
         redirect($_SERVER['HTTP_REFERER']);
     }
 

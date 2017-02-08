@@ -1,6 +1,6 @@
-<br><br>
+<div style="margin-top: 40px;margin-bottom: 40px;">
 <?= $slider_top ?>
-<br><br>
+</div>
 <article>
     <div class="container bestseller">
         <?php
