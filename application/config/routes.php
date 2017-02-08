@@ -163,7 +163,7 @@ $route['send_contact'] = 'contact/send_contact';
 $route['gui-email'] =  'contact/send_emails';
 $route['gui-code'] =  'contact/send_code';
 
-    $route['gui-code-view'] =  'contact/send_code_view';
+$route['gui-code-view'] =  'contact/send_code_view';
 $route['gui-code-view-err'] =  'contact/send_code_view_err';
 
 

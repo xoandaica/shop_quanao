@@ -4,13 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/shop_quanao/application/views/home.php</file>
-            <file>file:/C:/xampp/htdocs/shop_quanao/assets/js/site/main_site.js</file>
-            <file>file:/C:/xampp/htdocs/shop_quanao/application/views/trademark_bycategory_pd.php</file>
-            <file>file:/C:/xampp/htdocs/shop_quanao/assets/plugin/baokim/js/jquery.number.js</file>
-            <file>file:/C:/xampp/htdocs/shop_quanao/application/config/config.php</file>
-            <file>file:/C:/xampp/htdocs/shop_quanao/assets/css/bootstrap.min.css</file>
+            <file>file:/C:/xampp/htdocs/shop_quanao/application/controllers/products.php</file>
+            <file>file:/C:/xampp/htdocs/shop_quanao/filehtml/index.htm</file>
+            <file>file:/C:/xampp/htdocs/shop_quanao/application/config/constants.php</file>
+            <file>file:/C:/xampp/htdocs/shop_quanao/application/views/home_backup.php</file>
             <file>file:/C:/xampp/htdocs/shop_quanao/application/views/productdetail.php</file>
+            <file>file:/C:/xampp/htdocs/shop_quanao/application/views/all_product.php</file>
+            <file>file:/C:/xampp/htdocs/shop_quanao/application/config/routes.php</file>
             <file>file:/C:/xampp/htdocs/shop_quanao/application/views/header.php</file>
+            <file>file:/C:/xampp/htdocs/shop_quanao/application/views/pro_search.php</file>
+            <file>file:/C:/xampp/htdocs/shop_quanao/application/views/pro_bycategory.php</file>
         </group>
     </open-files>
 </project-private>
