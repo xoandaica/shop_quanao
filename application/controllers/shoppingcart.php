@@ -190,11 +190,13 @@ class Shoppingcart extends MY_Controller {
                 $_SESSION['message'] = "Bạn đã đặt hàng thành công !";
                 if (isset($_SESSION['cart'])) {
                     unset($_SESSION['cart']);
+                     $_SESSION['totalProduct'] = 0;
                 }
             }
 //            redirect(base_url('thanh-toan-dat-hang'));
             if (isset($_SESSION['cart'])) {
                 unset($_SESSION['cart']);
+                 $_SESSION['totalProduct'] = 0;
             }
         }
         @$madon_hang = @$madon_hang;
