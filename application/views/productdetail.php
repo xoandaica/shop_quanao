@@ -81,16 +81,16 @@
                                     <!--<p><span class="bold">Đánh giá:</span> <img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/rato.png"></p>-->
                                 </span>
                             </div>
-                            <div class="col-md-6 col-sm-6">
-                                <span class="detail-size pull-right sdesktop">
-                                    <ul>
-                                        <li id="dsize_s"  onclick="xaddcart('s')" itemid="s">S</li>
-                                        <li id="dsize_m"  onclick="xaddcart('m')" itemid="m" >M</li>
-                                        <li id="dsize_l"  onclick="xaddcart('l')" itemid="l" >L</li>
-                                        <li id="dsize_xl"  onclick="xaddcart('xl')" itemid="xl" >XL</li>
-                                    </ul> 
-                                </span>
-                            </div>
+                            <!--                            <div class="col-md-6 col-sm-6">
+                                                            <span class="detail-size pull-right sdesktop">
+                                                                <ul>
+                                                                    <li id="dsize_s"  onclick="xaddcart('s')" itemid="s">S</li>
+                                                                    <li id="dsize_m"  onclick="xaddcart('m')" itemid="m" >M</li>
+                                                                    <li id="dsize_l"  onclick="xaddcart('l')" itemid="l" >L</li>
+                                                                    <li id="dsize_xl"  onclick="xaddcart('xl')" itemid="xl" >XL</li>
+                                                                </ul> 
+                                                            </span>
+                                                        </div>-->
                             <div class="clearfix"></div>
                         </div>
                         <div class="btn-control">
@@ -433,204 +433,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hidden-sm">
-                    <div class="col-lg-3 col-md-3 col-xs-12 static-product-sidebar">
-
-                        <div class="row headding-page">
-                            <div class="col-md-12 col-xs-12">
-                                <div class="special-headding-2"><span>Sản phẩm hot nhất</span></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-xs-12">
-                                <div class="kk-special mCustomScrollbar">
-                                    <div class="woocommerce">
-
-
-                                        <ul class="products">
-                                            <ul>
-                                                <li>
-                                                    <div class="prothumb" ele="99485">
-
-                                                        <a href="index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-43.jpg" class="img-thumbnail shop-imgs" data="index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="index.html">Đầm công sở<br />KK63-43</a></p>
-                                                    <p ><b>520.000 VNĐ</b></p>
-                                                </li>
-                                                <li>
-                                                    <div class="prothumb" ele="99483">
-
-                                                        <a href="../dam-cong-so-kk63-42/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-42.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-42/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-42/index.html">Đầm công sở<br />KK63-42</a></p>
-                                                    <p ><b>440.000 VNĐ</b></p>
-                                                </li>
-                                                <li>
-                                                    <div class="prothumb" ele="99481">
-
-                                                        <a href="../dam-cong-so-kk63-41/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-41.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-41/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-41/index.html">Đầm công sở<br />KK63-41</a></p>
-                                                    <p ><b>410.000 VNĐ</b></p>
-                                                </li>
-                                                <li>
-                                                    <div class="prothumb" ele="99479">
-
-                                                        <a href="../dam-cong-so-kk63-40/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-40.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-40/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-40/index.html">Đầm công sở<br />KK63-40</a></p>
-                                                    <p ><b>440.000 VNĐ</b></p>
-                                                </li>
-                                                <li>
-                                                    <div class="prothumb" ele="99477">
-
-                                                        <a href="../dam-cong-so-kk63-39/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-39.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-39/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-39/index.html">Đầm công sở<br />KK63-39</a></p>
-                                                    <p ><b>410.000 VNĐ</b></p>
-                                                </li>
-
-
-
-
-
-
-
-                                                <li>
-                                                    <div class="prothumb" ele="99475">
-
-                                                        <a href="../dam-cong-so-kk63-38/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-38.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-38/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-38/index.html">Đầm công sở<br />KK63-38</a></p>
-                                                    <p ><b>500.000 VNĐ</b></p>
-                                                </li>
-
-
-
-
-
-
-
-                                                <li>
-                                                    <div class="prothumb" ele="99473">
-
-                                                        <a href="../dam-cong-so-kk63-37/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-37.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-37/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-37/index.html">Đầm công sở<br />KK63-37</a></p>
-                                                    <p ><b>400.000 VNĐ</b></p>
-                                                </li>
-
-
-
-
-
-
-
-                                                <li>
-                                                    <div class="prothumb" ele="99471">
-
-                                                        <a href="../dam-cong-so-kk63-36/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-36.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-36/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-36/index.html">Đầm công sở<br />KK63-36</a></p>
-                                                    <p ><b>490.000 VNĐ</b></p>
-                                                </li>
-
-
-
-
-
-
-
-                                                <li>
-                                                    <div class="prothumb" ele="99469">
-
-                                                        <a href="../dam-cong-so-kk63-35/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-35.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-35/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-35/index.html">Đầm công sở<br />KK63-35</a></p>
-                                                    <p ><b>410.000 VNĐ</b></p>
-                                                </li>
-
-
-
-
-
-
-
-                                                <li>
-                                                    <div class="prothumb" ele="99467">
-
-                                                        <a href="../dam-cong-so-kk63-34/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-34.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-34/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-34/index.html">Đầm công sở<br />KK63-34</a></p>
-                                                    <p ><b>400.000 VNĐ</b></p>
-                                                </li>
-
-
-
-
-
-
-
-                                                <li>
-                                                    <div class="prothumb" ele="99465">
-
-                                                        <a href="../dam-cong-so-kk63-33/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-33.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-33/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-33/index.html">Đầm công sở<br />KK63-33</a></p>
-                                                    <p ><b>400.000 VNĐ</b></p>
-                                                </li>
-
-
-
-
-
-
-
-                                                <li>
-                                                    <div class="prothumb" ele="99463">
-
-                                                        <a href="../dam-cong-so-kk63-32/index.html"> 
-                                                            <img src="http://kkfashion.vn/wp-content/uploads/images/356_520/KK63/dam-cong-so-kk63-32.jpg" class="img-thumbnail shop-imgs" data="../dam-cong-so-kk63-32/index.html"/>
-                                                        </a>
-                                                    </div>
-                                                    <p> <a href="../dam-cong-so-kk63-32/index.html">Đầm công sở<br />KK63-32</a></p>
-                                                    <p ><b>520.000 VNĐ</b></p>
-                                                </li>
-
-
-
-                                            </ul>
-
-
-                                        </ul>
-
-
-                                    </div>			</div>
-                            </div>
-                        </div>
-                    </div>                </div>
+                <?= $newest_product ?>
             </div>
         </div>
     </div>

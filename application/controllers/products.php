@@ -162,6 +162,7 @@ class Products extends MY_Controller
             'type'=>'products');
 
         $this->LoadHeader($seo);
+        $data['product_lienquan'] =$this->widget("product_lienquan");
         $this->load->view('productdetail',$data);
         $this->LoadFooter();
     }

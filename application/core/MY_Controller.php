@@ -166,9 +166,15 @@ class MY_Controller extends CI_Controller {
 //            $data['province']           =$this->f_homemodel->get_data('province',array());
         $data['recaptcha_html'] = $this->recaptcha->recaptcha_get_html();
         $data['address'] = $this->address;
+        $data['hotline1'] = $this->hotline1;
+        $data['hotline2'] = $this->hotline2;
+        $data['site_name'] = $this->site_name;
         $data['wiget_footer'] = $this->widget('wiget_footer');
         $data['script_footer'] = $this->widget('script_footer');
         $data['support'] = $this->widget('support');
+
+        $data['menus'] = $this->f_homemodel->GetMenu_Parent('top', 10, 0); //position , limit , ogg
+        $data['menu_sub'] = $this->f_homemodel->GetMenu_Children('top', 50, 0);
         //echo "<pre>";var_dump($data['menu_footer']);die();
         $this->load->view('footer', $data);
     }
@@ -208,6 +214,11 @@ class MY_Controller extends CI_Controller {
                 $data['slider_btt'] = $this->f_homemodel->getBanner('banner_btt');
                 return $this->load->view('widgets/slider_top', $data, true);
                 break;
+            case 'product_lienquan':
+                $this->load->model('f_productmodel');
+                $data['product_lienquan'] = $this->f_productmodel->ProductLienQuan();
+                return $this->load->view('widgets/product_lienquan', $data, true);
+                
         }
     }
 
