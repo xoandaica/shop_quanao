@@ -67,12 +67,33 @@ class F_productmodel extends MY_Model {
         return $q->result();
     }
 
+    public function getNewProduct() {
+        $this->db->select('product.*,
+                            product_category.id as cat_id,
+                            product_category.name as cate_name,
+                            product_category.alias as cat_alias,
+                            product_to_category.id_product,
+                            product_to_category.id_category');
+
+        $this->db->join('product_to_category', 'product_to_category.id_product=product.id');
+        $this->db->join('product_category', 'product_to_category.id_category=product_category.id');
+
+        //  $this->db->where('product_to_category.id_category',$id);
+//        $this->db->where_in('product.category_id', $this->getArrayChildCate($q1->id,true));
+        $this->db->where('product.lang', $this->language);
+        $this->db->order_by('product.time', 'desc');
+        $this->db->group_by('product.id');
+        $this->db->limit(5, 0);
+        $q = $this->db->get('product');
+        return $q->result();
+    }
+
     public function getProductSimilar($product_id, $limit, $offset) {
         $arr_in = $this->getarr_idcategory($product_id);
-        $query = $this->db->select('product.id,product_category.id,product.alias as pro_alias,product.image as pro_image,product.caption_1,
+        $query = $this->db->select('product.id,product_category.id as cat_id, product.alias as pro_alias,product.image as pro_image,product.caption_1,
                                 product.category_id, product.price,product.price_sale,product_category.name as cate_name,product.name as product_name,product.description,product.price as pro_price,
                                 product_category.alias,product_category.alias as cate_alias,product_category.parent_id,
-                                product_to_category.id as product_to_category_id ')
+                                product_to_category.id as product_to_category_id,product.alias ')
                 ->from('product')
                 ->join('product_to_category', 'product_to_category.id_product = product.id')
                 ->join('product_category', 'product_to_category.id_category = product_category.id')
@@ -435,14 +456,6 @@ class F_productmodel extends MY_Model {
     public function new_Product() {
         $this->db->select('*');
         $this->db->limit(10, 0);
-        $q = $this->db->get('product');
-        return $q->result();
-    }
-
-    public function getNewProduct() {
-        $this->db->select('*');
-        $this->db->limit(5, 0);
-        $this->db->order_by('time', 'desc');
         $q = $this->db->get('product');
         return $q->result();
     }

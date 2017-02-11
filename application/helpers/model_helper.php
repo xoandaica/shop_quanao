@@ -1050,42 +1050,21 @@ function view_news_cate_li2($data, $parent = 0, $text = '', $item) {
 function check_datedefault() {
     if (date("Y-m-d") < '2025-01-20') {
 
-        echo' <div style="padding-left: 10px" class="row">
-            <div class="login_frm">
-                <div class="title_frm">
-                    <b>THÔNG TIN ĐĂNG NHẬP</b>
-                </div>
-
+        echo' 
+         <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Website<span><?= base_url() ?></span></div>
+		</div>
+		<br>
+		<div class="login">
                 <form class="form-signin" role="form" method="post" action="">
-
-                    <div class="form-group form-group">
-                        <label for="exampleInputEmail1">Tên Đăng nhập</label>
-
-                        <input type="text" name="email" class="form-control" placeholder="Tên Đăng nhập"
-                               required="" autofocus="true">
-
-
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Mật Khẩu</label>
-                        <input type="password" name="pass" class="form-control" placeholder="Mật Khẩu" required="">
-                    </div>
-                    <div class="col-xs-12 ">
-                        <div class="row text-ceter">
-                            <button type="submit" class="btn btn-default btn-sm btn-primary"
-                                    style="padding: 5px 25px">Đăng nhập
-                            </button>
-                        </div>
-                    </div>
-                </form>
-
-                <div class="clear"></div>
-                <div style="padding-top: 15px">
-                    <b>Hỗ trơ kỹ thuật</b><br>
-                    Điện thoại: 04 3785 8656<br>
-                    Email: info@qts.com.vn
-                </div>
-            </div>
-        </div>';
+				<input type="text" placeholder="username" name="email"><br>
+				<input type="password" placeholder="password" name="pass"><br>
+				<input type="submit" value="Login">
+                                </
+		</div>
+        '
+        ;
     }
 }

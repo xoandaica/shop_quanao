@@ -75,8 +75,8 @@
                         <div class="row color-size">
                             <div class="col-md-6 col-sm-6">
                                 <span class="color"> 
-                                    <p><span class="bold">Màu sắc:</span><?= $pro_first->color ?></p>
-                                    <p><span class="bold">Chất liệu:</span> <?= $pro_first->origin ?></p>
+                                    <p><span class="bold">Màu sắc: </span><?= $pro_first->color ?></p>
+                                    <p><span class="bold">Chất liệu: </span> <?= $pro_first->origin ?></p>
 
                                     <!--<p><span class="bold">Đánh giá:</span> <img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/rato.png"></p>-->
                                 </span>
@@ -127,7 +127,7 @@
                                 <script type="text/javascript">
                                     function checkadd() {
                                         flag = false;
-                                        $('.detail-size li').each(function () {
+                                        $('.detail-size li').each(function() {
                                             if ($(this).hasClass('active')) {
                                                 flag = true;
                                             }
@@ -153,30 +153,9 @@
                             </ul>
                         </div>
                         <div class="thumbnail-slide">
-                            <script type="text/javascript">
+                            <?= $pro_first->content; ?>
 
-
-                                jQuery(document).ready(function ($) {
-
-                                    jQuery("#owl-demo").owlCarousel({
-                                        items: 3,
-                                        pagination: false,
-                                        autoPlay: false,
-                                        navigation: true,
-                                        navigationText: ["<img src='http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/btn-prev-2.png'>", "<img src='http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/btn-next-2.png'>"],
-                                        itemsTablet: [768, 3],
-                                        afterInit: function (el) {
-                                            el.find(".owl-item").eq(0).addClass("synced");
-                                        }
-                                    });
-
-
-                                });
-
-
-                            </script>
-
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>
@@ -187,12 +166,14 @@
                             <li class="active"><a data-toggle="tab" href="#step-1">
                                     <p class="step-title">Thông tin sản phẩm</p>
                                 </a></li>
-                            <li><a data-toggle="tab" href="#step-2">
-                                    <p class="step-title">Các bước mua hàng</p>
-                                </a></li>
-                            <li><a data-toggle="tab" href="#step-3">
+                            <li>
+                                <a data-toggle="tab" href="#step-2">
                                     <p class="step-title">Đánh giá của khách hàng</p>
-                                </a></li>
+                                </a></li><!--
+                            <li>
+                                <a data-toggle="tab" href="#step-3">
+                                    <p class="step-title">Đánh giá của khách hàng</p>
+                                </a></li>-->
                         </ul>
                     </div>
                     <div class="tab-content">
@@ -200,232 +181,137 @@
                             <?php foreach ($product_image as $img) { ?>
                                 <img class="img-thumbnail" src="<?= base_url($img->link) ?>" alt="<?= $pro_first->name ?>" title="<?= $pro_first->name ?>" />
                             <?php } ?>
-                            <div class="multi-size cart-table">
-                                <table width="600" >
-                                    <thead>
-                                        <tr>
-                                            <th>Size</th>
-                                            <th>Vòng 1</th>
-                                            <th>Vòng 2</th>
-                                            <th class="end">Vòng 3</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>S</td>
-                                            <td>83</td>
-                                            <td>67</td>
-                                            <td>90</td>
-                                        </tr>
-                                        <tr>
-                                            <td>M</td>
-                                            <td>86</td>
-                                            <td>70</td>
-                                            <td>95</td>
-                                        </tr>
-                                        <tr>
-                                            <td>L</td>
-                                            <td>90</td>
-                                            <td>76</td>
-                                            <td>97</td>
-                                        </tr>
-                                        <tr>
-                                            <td>XL</td>
-                                            <td>96</td>
-                                            <td>82</td>
-                                            <td>104</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-
-                            <div class="delivery cart-table">
-                                <h2>Hướng dẫn giao hàng:</h2>
-                                <table width="600" cellpadding="10" cellspacing="10">
-                                    <thead>
-                                        <tr>
-                                            <th width="25%">Khu vực giao hàng</th>
-                                            <th width="25%">Phương thức thanh toán</th>
-                                            <th width="25%">Thời gian giao hàng</th>
-                                            <th width="25%" class="end">Phí vận chuyển</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Nội thành  TP.HCM
-                                                ( Q.1, Q3, Q.4, Q.5, Q10, Q. Bình Thạnh, Q. Phú Nhuận, Q, Gò Vấp, Q. Tân Bình)
-                                                Ngoại thành  TP.HCM 
-                                                ( Q.2, Q.6, Q.7, Q.8, Q.11, Q. Tân Phú, Q. Bình Tân)</td>
-                                            <td>Chuyển khoản, COD, thanh toán trực tiếp( không áp dụng với các quận: Nhà Bè, Hóc Môn, Bình Chánh, Q.12)</td>
-                                            <td width="25%">Nhận hàng trong vòng từ 1~3 ngày sau khi hoàn thành đặt hàng</td>
-                                            <td width="20%" class="end">Nội thành:
-                                                Miễn phí
-                                                ( Nếu trường hợp không lấy SP phí vận chuyển 30.000 VNĐ)
-                                                Ngoại thành:
-                                                Phí vận chuyển 30.000 VNĐ ( Trên 3 SP miễn phí vận chuyển, trường hợp không lấy SP phí vận chuyển 60.000 VNĐ)</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <hr class="abchr"  >
-                                <table width="600" cellpadding="10" cellspacing="10">
-                                    <tbody>
-                                        <tr>
-                                            <td width="25%">Toàn bộ tỉnh, thành phố khác</td>
-                                            <td width="25%">Chuyển khoản và COD</td>
-                                            <td width="25%">Với khách hàng chuyển khoản trước: 3-4 ngày kể từ ngày chuyển khoản. Đối với COD: nhận hàng sau 4-6 ngày</td>
-                                            <td width="25%" class="end">Mua 1 sp phí là 35.000 VNĐ. Trên 2 sản phẩm được miễn phí vận chuyển</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <hr class="abchr" >
-                            </div>
-                            <div class="delivery cart-table">
-                                <h2>Điều kiện đổi hàng:</h2>
-                                <table width="600" cellpadding="10" cellspacing="10">
-                                    <thead>
-                                        <tr>
-                                            <th width="25%">Khu vực</th>
-                                            <th width="25%">Quy định chung</th>
-                                            <th width="25%">Cách thức đổi hàng</th>
-                                            <th width="25%" class="end">Phí đổi hàng</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>TP.HCM</td>
-                                            <td>Hàng còn nguyên tem, mạc, hóa đơn, 
-                                                không bị dơ bẩn, hư hỏng, chưa qua sử dụng hoặc  giặt tẩy.  
-                                                Liên hệ đổi hàng sau 13:30</td>
-                                            <td width="25%">Ghé bất kỳ cửa hàng để đổi trong vòng 3 ngày.</td>
-                                            <td width="20%" class="end">Miễn phí</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <hr class="abchr"  >
-                                <table width="600" cellpadding="10" cellspacing="10">
-                                    <tbody>
-                                        <tr>
-                                            <td width="25%">Toàn bộ tỉnh, thành phố khác</td>
-                                            <td width="25%">Hàng còn nguyên tem, mạc, hóa đơn, 
-                                                không bị dơ bẩn, hư hỏng, chưa qua sử dụng hoặc  giặt tẩy.  
-                                                Liên hệ đổi hàng sau 13:30</td>
-                                            <td width="25%">Gửi lại  sản phẩm đổi đến địa chỉ: Nguyễn Thị Kim Duyên.40 Lê Văn Sỹ, phường 11, quận Phú Nhuận. Trong vòng 3 ngày kể từ ngày nhận hàng.</td>
-                                            <td width="25%" class="end">35.000 (nếu không mua thêm sản phẩm mới)</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <hr class="abchr" >
-                            </div>
+                            <!--                            <div class="multi-size cart-table">
+                                                            <table width="600" >
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Size</th>
+                                                                        <th>Vòng 1</th>
+                                                                        <th>Vòng 2</th>
+                                                                        <th class="end">Vòng 3</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>S</td>
+                                                                        <td>83</td>
+                                                                        <td>67</td>
+                                                                        <td>90</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>M</td>
+                                                                        <td>86</td>
+                                                                        <td>70</td>
+                                                                        <td>95</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>L</td>
+                                                                        <td>90</td>
+                                                                        <td>76</td>
+                                                                        <td>97</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>XL</td>
+                                                                        <td>96</td>
+                                                                        <td>82</td>
+                                                                        <td>104</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                            
+                            
+                                                        <div class="delivery cart-table">
+                                                            <h2>Hướng dẫn giao hàng:</h2>
+                                                            <table width="600" cellpadding="10" cellspacing="10">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th width="25%">Khu vực giao hàng</th>
+                                                                        <th width="25%">Phương thức thanh toán</th>
+                                                                        <th width="25%">Thời gian giao hàng</th>
+                                                                        <th width="25%" class="end">Phí vận chuyển</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Nội thành  TP.HCM
+                                                                            ( Q.1, Q3, Q.4, Q.5, Q10, Q. Bình Thạnh, Q. Phú Nhuận, Q, Gò Vấp, Q. Tân Bình)
+                                                                            Ngoại thành  TP.HCM 
+                                                                            ( Q.2, Q.6, Q.7, Q.8, Q.11, Q. Tân Phú, Q. Bình Tân)</td>
+                                                                        <td>Chuyển khoản, COD, thanh toán trực tiếp( không áp dụng với các quận: Nhà Bè, Hóc Môn, Bình Chánh, Q.12)</td>
+                                                                        <td width="25%">Nhận hàng trong vòng từ 1~3 ngày sau khi hoàn thành đặt hàng</td>
+                                                                        <td width="20%" class="end">Nội thành:
+                                                                            Miễn phí
+                                                                            ( Nếu trường hợp không lấy SP phí vận chuyển 30.000 VNĐ)
+                                                                            Ngoại thành:
+                                                                            Phí vận chuyển 30.000 VNĐ ( Trên 3 SP miễn phí vận chuyển, trường hợp không lấy SP phí vận chuyển 60.000 VNĐ)</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <hr class="abchr"  >
+                                                            <table width="600" cellpadding="10" cellspacing="10">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td width="25%">Toàn bộ tỉnh, thành phố khác</td>
+                                                                        <td width="25%">Chuyển khoản và COD</td>
+                                                                        <td width="25%">Với khách hàng chuyển khoản trước: 3-4 ngày kể từ ngày chuyển khoản. Đối với COD: nhận hàng sau 4-6 ngày</td>
+                                                                        <td width="25%" class="end">Mua 1 sp phí là 35.000 VNĐ. Trên 2 sản phẩm được miễn phí vận chuyển</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <hr class="abchr" >
+                                                        </div>
+                                                        <div class="delivery cart-table">
+                                                            <h2>Điều kiện đổi hàng:</h2>
+                                                            <table width="600" cellpadding="10" cellspacing="10">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th width="25%">Khu vực</th>
+                                                                        <th width="25%">Quy định chung</th>
+                                                                        <th width="25%">Cách thức đổi hàng</th>
+                                                                        <th width="25%" class="end">Phí đổi hàng</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>TP.HCM</td>
+                                                                        <td>Hàng còn nguyên tem, mạc, hóa đơn, 
+                                                                            không bị dơ bẩn, hư hỏng, chưa qua sử dụng hoặc  giặt tẩy.  
+                                                                            Liên hệ đổi hàng sau 13:30</td>
+                                                                        <td width="25%">Ghé bất kỳ cửa hàng để đổi trong vòng 3 ngày.</td>
+                                                                        <td width="20%" class="end">Miễn phí</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <hr class="abchr"  >
+                                                            <table width="600" cellpadding="10" cellspacing="10">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td width="25%">Toàn bộ tỉnh, thành phố khác</td>
+                                                                        <td width="25%">Hàng còn nguyên tem, mạc, hóa đơn, 
+                                                                            không bị dơ bẩn, hư hỏng, chưa qua sử dụng hoặc  giặt tẩy.  
+                                                                            Liên hệ đổi hàng sau 13:30</td>
+                                                                        <td width="25%">Gửi lại  sản phẩm đổi đến địa chỉ: Nguyễn Thị Kim Duyên.40 Lê Văn Sỹ, phường 11, quận Phú Nhuận. Trong vòng 3 ngày kể từ ngày nhận hàng.</td>
+                                                                        <td width="25%" class="end">35.000 (nếu không mua thêm sản phẩm mới)</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <hr class="abchr" >
+                                                        </div>-->
 
                         </div>
                         <div id="step-2" class="tab-pane fade">
-                            <p><b>Bước 1:</b> Chọn sản phẩm cần mua trên menu SHOP ONLINE</p>
-                            <img src="http://kkfashion.vn/wp-content/themes/kkfashion/img/huongdan-1.jpg">
-                            <p><b>Bước 2:</b> Xem thông tin sản phẩm và chọn sản phẩm cần mua. Sau khi xem xong khách hàng chọn nút giỏ hàng để xem những thông tin sản phẩm đã mua và tiếp tục thanh toán.</p>
-                            <img src="http://kkfashion.vn/wp-content/themes/kkfashion/img/huongdan-2.jpg">
-                            <p><b>Bước 3:</b> Nếu khách hàng muốn thay đổi số lượng hoặc không muốn mua sản phẩm thì có thể thao tác như hình dưới. Sau khi chọn sản phẩm, khách hàng điền thông tin cần mua rồi nhấn nút đặt hàng để gửi đến bộ phận kinh doanh, K&amp;K Fashion sẽ liên hệ đến quí khách trong thời gian sớm nhất.</p>
-                            <img src="http://kkfashion.vn/wp-content/themes/kkfashion/img/huongdan-3.jpg">
-                            <br /> <!-- thong tin bank --> 
-                            <br /> 
-                            <br /> 
-                            <div>
-                                <p>Sau khi khách hàng mua sản phẩm qua 1 trong 3 hình thức trên.<br>Bộ phận kinh doanh K&amp;K Fashion sẽ liên hệ đến quý khách và hướng dẫn quý khách các thức thanh toán và nhận hàng.</p>
-                                <p>Quý khách có thể chuyển khoản qua 1 trong những tài khoản sau:</p>
+                            <div class="fb-comments" data-href="http://localhost/nuhoangquanjean/quan-au-chan-vay/quan-au-chan-vay-2-c26p23.html" data-num-posts="10" data-order-by="reverse_time" data-width="100%" data-colorscheme="dark">
+                                <div class="hidden" style="position: relative">
+                                    <textarea onfocus="check_login()" id="comment" name="comment" placeholder="Viết bình luận..." style="padding-right: 50px" class="form-control"></textarea>
+                                    <button class="btn btn-default btn-xs" data-items="941" data-reply="0" data-content="comment" data-toggle="modal" data-target=".bs-example-modal-sm" id="btn_sent" style="position: absolute; top: 20px; right: 10px">Gửi
+                                    </button>
+                                </div>
+                                <div class="" style="padding-left: 15px; color: #333; font-size: 14px; line-height: 20px">Chưa có bình luận nào.</div>
+                                <div class="clearfix"></div>
+                                <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid" data-href="https://www.facebook.com/FacebookVietnam/photos/pb.278992552121199.-2207520000.1464146751./983061755047605/?type=3&amp;theater" data-width="100%" data-numposts="5" fb-xfbml-state="rendered"><span style="height: 470px;"><iframe id="f2b4edfbc7c80b4" name="f2397ff73cb384" scrolling="no" title="Facebook Social Plugin" class="fb_ltr fb_iframe_widget_lift" src="https://www.facebook.com/plugins/comments.php?api_key=&amp;channel_url=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F0eWevUAMuoH.js%3Fversion%3D42%23cb%3Df2c48e98fccc428%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%252Ff357d7235ee5e0c%26relation%3Dparent.parent&amp;href=https%3A%2F%2Fwww.facebook.com%2FFacebookVietnam%2Fphotos%2Fpb.278992552121199.-2207520000.1464146751.%2F983061755047605%2F%3Ftype%3D3%26theater&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v2.6&amp;width=100%25" style="border: none; overflow: hidden; height: 470px; width: 100%;"></iframe></span></div>
+                                <div class="clearfix"></div>
 
-                                <div class="col-md-12 col-xs-12 content-step-3">
-                                    <div class="row content-step-bank">
-                                        <div align="center" class="col-md-5 col-xs-5 col-sm-5">
-                                            <a href="#"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/bank-info-1.png" alt=""></a>
-                                        </div>
-                                        <div class="col-md-7 col-xs-7 col-sm-7">
-                                            <p class="bold">Ngân hàng Xuất Nhập khẩu Việt Nam - EXIMBANK:</p><br>
-                                            <p>Tên chủ tài khoản: Công ty TNHH Khang Khôi</p>
-                                            <p>Số tài khoản: 100714851015505</p> 
-                                            <p>Chi nhánh Hòa Bình</p>
-                                        </div>
-                                    </div>
-                                    <div class="row content-step-bank">
-                                        <div align="center" class="col-md-5 col-xs-5 col-sm-5">
-                                            <a href="#"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/bank-info-2.png" alt=""></a>
-                                        </div>
-                                        <div class="col-md-7 col-xs-7 col-sm-7">
-                                            <p class="bold">Ngân hàng TMCP Ngoại thương Việt Nam  - VIETCOMBANK</p><br>
-                                            <p>Tên chủ tài khoản: Lê Viết Thanh</p>
-                                            <p>Số tài khoản: 0071000629193</p> 
-                                            <p>Chi nhánh Hồ Chí Minh</p>
-                                        </div>
-                                    </div>
-                                    <div class="row content-step-bank">
-                                        <div align="center" class="col-md-5 col-xs-5 col-sm-5">
-                                            <a href="#"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/bank-info-3.png" alt=""></a>
-                                        </div>
-                                        <div class="col-md-7 col-xs-7 col-sm-7">
-                                            <p class="bold">Ngân hàng Nông nghiệp & Phát triển  Nông thôn - AGRIBANK</p><br>
-                                            <p>Tên chủ tài khoản: Lê Viết Thanh</p>
-                                            <p>Số tài khoản: 1700206222669</p> 
-                                            <p>Chi nhánh Hòa Bình</p>
-                                        </div>
-                                    </div>
-                                    <div class="row content-step-bank">
-                                        <div align="center" class="col-md-5 col-xs-5 col-sm-5">
-                                            <a href="#"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/bank-info-4.png" alt=""></a>
-                                        </div>
-                                        <div class="col-md-7 col-xs-7 col-sm-7">
-                                            <p class="bold">Ngân hàng Đông Á - DONGABANK</p><br>
-                                            <p>Tên chủ tài khoản: Lê Viết Thanh</p>
-                                            <p>Số tài khoản: 0107583678</p> 
-                                            <p>Phòng giao dịch: Tô Hiến Thành</p>
-                                        </div>
-                                    </div>
-                                    <div class="row content-step-bank">
-                                        <div align="center" class="col-md-5 col-xs-5 col-sm-5">
-                                            <a href="#"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/bank-info-5.png" alt=""></a>
-                                        </div>
-                                        <div class="col-md-7 col-xs-7 col-sm-7">
-                                            <p class="bold">Ngân hàng TMCP Công thương Việt Nam  - VIETTINBANK</p><br>
-                                            <p>Tên chủ tài khoản: Lê Viết Thanh</p>
-                                            <p>Số tài khoản: 711A54466884</p> 
-                                            <p>Chi nhánh 10 - Phòng giao dịch Tô Hiến Thành</p>
-                                        </div>
-                                    </div>
-                                    <div class="row content-step-bank">
-                                        <div align="center" class="col-md-5 col-xs-5 col-sm-5">
-                                            <a href="#"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/bank-info-6.png" alt=""></a>
-                                        </div>
-                                        <div class="col-md-7 col-xs-7 col-sm-7">
-                                            <p class="bold">Ngân hàng TMCP Kỹ Thương Việt Nam -  TECHCOMBANK</p><br>
-                                            <p>Tên chủ tài khoản: Lê Viết Thanh</p>
-                                            <p>Số tài khoản: 12524646971017</p> 
-                                            <p>Chi nhánh 10 - Techcombank Trần Quang Diệu</p>
-                                        </div>
-                                    </div>
-                                    <div class="row content-step-bank">
-                                        <div align="center" class="col-md-5 col-xs-5 col-sm-5">
-                                            <a href="#"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/bank-info-7.png" alt=""></a>
-                                        </div>
-                                        <div class="col-md-7 col-xs-7 col-sm-7">
-                                            <p class="bold">Ngân hàng Đầu tư & Phát triển Việt Nam  - BIDV</p><br>
-                                            <p>Tên chủ tài khoản: Lê Viết Thanh</p>
-                                            <p>Số tài khoản: 31310000426369</p> 
-                                            <p>Phòng giao dịch: Lê Thị Riêng</p>
-                                        </div>
-                                    </div>
-                                </div>								
-
-                                <div style="clear:both;"></div>
-                            </div>
-                            <div class="well direction">
-                                <p><b>K&amp;K Fashion giải quyết đổi hàng trong thời gian 3 ngày với những điều kiện sau:</b><br>
-                                    - Sản phẩm còn nguyên tem mạc.<br>
-                                    - Sản phẩm chưa được giặt và sử dụng qua.<br>
-                                    - Còn nguyên hóa đơn mua hàng.<br>
-                                    - Chỉ giải quyết 1 lần/ sản phẩm.<br>
-                                    <b>Lưu ý: Khách hàng vui lòng đổi hàng vào buổi chiều (14.00h - 17.00h)</b><br>
-                                </p>
-                                <p><b>Hiện tại K&amp;K Fashion có nhận giao hàng tận nơi trên địa bàn Thành phố Hồ Chí Minh với hình thức như sau:</b><br>
-                                    - Đối với những quận nội thành (Q.1, Q3, Q.4, Q.5, Q10, Q. Bình Thạnh, Q. Phú Nhuận, Q, Gò Vấp, Q. Tân Bình). K&amp;K Fashion sẽ miễn phí chuyển hàng<br>
-                                    - Đối với những quận ngoại thành ( Q.2, Q.6, Q.7, Q.8, Q.11, Q. Tân Phú, Q. Bình Tân) thì phí chuyển hàng là 30.000/ lần chuyển hàng đối với đơn hàng dưới 3 SP</p>
                             </div>
                         </div>
                         <div id="step-3" class="tab-pane fade">
@@ -433,7 +319,7 @@
                         </div>
                     </div>
                 </div>
-                <?= $newest_product ?>
+                <?= $product_lienquan ?>
             </div>
         </div>
     </div>

@@ -214,10 +214,6 @@ class MY_Controller extends CI_Controller {
                 $data['slider_btt'] = $this->f_homemodel->getBanner('banner_btt');
                 return $this->load->view('widgets/slider_top', $data, true);
                 break;
-            case 'product_lienquan':
-                $this->load->model('f_productmodel');
-                $data['product_lienquan'] = $this->f_productmodel->ProductLienQuan();
-                return $this->load->view('widgets/product_lienquan', $data, true);
                 
         }
     }

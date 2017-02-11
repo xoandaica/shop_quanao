@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:fb='http://www.facebook.com/2008/fbml'>
     <head>
+        <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″/>
         <meta name="viewport" id="viewport" content="user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0" />
         <link rel="shortcut icon" href="<?= base_url($this->option->site_favicon) ?>"/>
         <link href="<?= base_url('assets/css/site/bootstrap.min.css') ?>" rel="stylesheet"/>
@@ -19,11 +20,17 @@
         <link href="<?= base_url('assets/plugin/woocommerce/css/woocommerce-layout18f6.css') ?>" rel="stylesheet"/>
         <link href="<?= base_url('assets/plugin/woocommerce/css/woocommerce-smallscreen18f6.css') ?>" rel="stylesheet"/>
         <link href="<?= base_url('assets/plugin/woocommerce/css/woocommerce18f6.css') ?>" rel="stylesheet"/>
+        <link href="<?= base_url('assets/font-awesome-4.1.0/css/font-awesome.css') ?>" rel="stylesheet"/>
         <script type="text/javascript" src="<?= base_url('assets/js/site/jquery-1.11.1.min.js') ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/site/bootstrap.min.js') ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/site/nav-menu3.js') ?>"></script><!--menu-->
         <script type="text/javascript" src="<?= base_url('assets/js/site/style-img.js') ?>"></script>
         <script type="text/javascript" src="<?= base_url('assets/js/site/main_site.js') ?>"></script>
+        <script type="text/javascript" src="<?= base_url('assets/custom/asset/js/jquery.mCustomScrollbar.concat.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= base_url('assets/custom/asset/js/jquery.flexslider.js') ?>"></script>
+        <script type="text/javascript" src="<?= base_url('assets/custom/asset/js/owl.carousel.min.js') ?>"></script>
+        <script type="text/javascript" src="<?= base_url('assets/custom/asset/js/prism.js') ?>"></script>
+        <script type="text/javascript" src="<?= base_url('assets/custom/asset/js/jquery.newsTicker.js') ?>"></script>
 
     </head>
     <body>
@@ -147,7 +154,7 @@
                     <!-- /menu mobile -->
 
                     <div class="col-md-2 col-sm-3 logo hidden-xs">
-                        <a href="index.html"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/logo.png" alt=""></a>
+                        <a href="<?= base_url() ?>"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/logo.png" alt=""></a>
                         <div class="clearfix"></div>
                     </div>
 

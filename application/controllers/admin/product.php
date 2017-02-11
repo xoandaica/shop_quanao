@@ -224,13 +224,14 @@ class Product extends MY_Controller
                 'address_order'   => $this->input->post('address_order'), // khu vuc giao hang
                 'location'        => $this->input->post('location'),
                 'position'        => $this->input->post('position'),
-                'color'           => implode(',', @$color),
+                'color'           => $this->input->post('color'),
+                'origin'           => $this->input->post('origin'),
                 'size'            => implode(',', @$size),
                 'size1'     => $this->input->post('size1'),
                 'size2'     => $this->input->post('size2'),
                 'size3'     => $this->input->post('size3'),
                 'size4'     => $this->input->post('size4'),
-
+                    
                 'description'     => $this->input->post('description'),
                 'content'         => $this->input->post('content'),
                 'note'            => $this->input->post('note'),
