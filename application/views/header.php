@@ -1,8 +1,41 @@
 <!DOCTYPE html>
 <html xmlns:fb='http://www.facebook.com/2008/fbml'>
     <head>
-        <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″/>
-        <meta name="viewport" id="viewport" content="user-scalable=no,width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0" />
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <title><?= isset($seo['title']) && $seo['title'] != '' ? $seo['title'] : @$this->option->site_name; ?></title>
+        <meta name='description'
+              content='<?= isset($seo['description']) ? $seo['description'] : @$this->option->site_description; ?>'/>
+        <meta name='keywords'
+              content='<?= isset($seo['keyword']) && $seo['keyword'] != '' ? $seo['keyword'] : $this->option->site_keyword; ?>'/>
+        <meta name='robots' content='index,follow'/>
+        <meta name='revisit-after' content='1 days'/>
+        <meta http-equiv='content-language' content='vi'/>
+
+        <!--    for facebook-->
+        <meta property="og:title"
+              content="<?= isset($seo['title']) && $seo['title'] != '' ? $seo['title'] : @$this->option->site_name; ?>"/>
+        <meta property="og:site_name" content="<?= @$this->option->site_name; ?>"/>
+        <meta property="og:url" content="<?= current_url(); ?>"/>
+        <meta property="og:description"
+              content="<?= isset($seo['description']) && $seo['description'] != '' ? $seo['description'] : @$this->option->site_description; ?>"/>
+        <meta property="og:type" content="<?= @$seo['type']; ?>"/>
+        <meta property="og:image"
+              content="<?= isset($seo['image']) && $seo['image'] != '' ? base_url($seo['image']) : $this->option->site_logo; ?>"/>
+
+        <meta property="og:locale" content="vi"/>
+
+        <!-- for Twitter -->
+        <meta name="twitter:card"
+              content="<?= isset($seo['description']) && $seo['description'] != '' ? $seo['description'] : @$this->option->site_description; ?>"/>
+        <meta name="twitter:title"
+              content="<?= isset($seo['title']) && $seo['title'] != '' ? $seo['title'] : @$this->option->site_name; ?>"/>
+        <meta name="twitter:description"
+              content="<?= isset($seo['description']) && $seo['description'] != '' ? $seo['description'] : @$this->option->site_description; ?>"/>
+        <meta name="twitter:image"
+              content="<?= isset($seo['image']) && $seo['image'] != '' ? base_url($seo['image']) : base_url(@$this->option->site_logo); ?>"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="fb:app_id" content="<?= $this->option->app_facebook ?>"/>
+        <meta property="fb:admins" content="<?= $this->option->user_facebook ?>"/>
         <link rel="shortcut icon" href="<?= base_url($this->option->site_favicon) ?>"/>
         <link href="<?= base_url('assets/css/site/bootstrap.min.css') ?>" rel="stylesheet"/>
         <link href="<?= base_url('assets/custom/asset/css/bootstrap-theme.css') ?>" rel="stylesheet"/>
@@ -34,7 +67,37 @@
 
     </head>
     <body>
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: <?php echo $this->option->app_facebook;  ?>,
+                    xfbml: true,
+                    version: 'v2.8'
+                });
+                FB.AppEvents.logPageView();
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=" + <?php echo $this->option->app_facebook;  ?>;
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
         <script type="text/javascript"> // giỏ hàng f
             function base_url() {
                 return '<?php echo base_url(); ?>';
@@ -53,8 +116,18 @@
                         <ul>
                             <li><a class="icon-menu toggleMenu" href="#menu" style="display: none;"><i class="fa fa-bars"></i></a></li>
                             <li><a href="my-account/index.html"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/login-icon.png" alt=""></a></li>
-                            <li class="cart-icon"><a href="http://kkfashion.vn/cart/"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/cart-icon.png" alt=""><span class="cart-number">0</span></a></li>
-                            <li class="endli"><a id="search-mb" href="#"><i class="fa fa-search"></i></a></li>
+                            <li class="cart-icon">   <a href="<?= base_url('gio-hang') ?>"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/icon-cart.png" alt=""> Giỏ hàng <span class="number-cart"><?php
+                                        if (isset($_SESSION['totalProduct'])) {
+                                            echo $_SESSION['totalProduct'];
+                                        } else {
+                                            echo '0';
+                                        }
+                                        ?></span>
+                                </a> </li>
+                            <li class="endli">  <form action="<?= base_url('tim-kiem') ?>" role="search" id="searchform">
+                                    <input class="search-input" style=" top: 60% !important;" placeholder=" Nhập sản phẩm..." type="text" value="" name="key" id="search">
+                                    <a href="javascript:void(0)" onclick="$('#searchform').submit()"><i class="fa fa-search"></i></a>
+                                </form></li>
                         </ul>
                     </div>
                     <ul class="nav-top hidden-lg hidden-md hidden-sm" style="display: block;">
@@ -90,66 +163,12 @@
                         }
                         ?>
                     </ul>
-
-
-
-                    <!--                    <ul class="nav-top hidden-lg hidden-md hidden-sm" style="display: block;">
-                                            <li>
-                                                <a href="gioi-thieu/index.html">Giới thiệu</a>
-                    
-                    
-                                            </li>
-                                            <li>
-                                                <a href="#" class="parent">Shop online</a>
-                    
-                                                <ul>
-                                                    <li><a href="danh-muc/dam-cong-so-kk/index.html">+ Đầm công sở</a></li>
-                    
-                                                    <li><a href="danh-muc/vay-dam-da-hoi/index.html">+ Váy đầm dạ hội</a></li>
-                    
-                                                    <li><a href="danh-muc/vay-chong-nang-kk/index.html">+ Váy chống nắng</a></li>
-                    
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="huong-dan-mua/index.html" class="parent">Hướng dẫn mua hàng</a>
-                    
-                                                <ul>
-                                                    <li><a href="huong-dan-mua/index.html">+ Các bước mua hàng</a></li>
-                    
-                                                    <li><a href="huong-dan-mua/quy-dinh-doi-hang/index.html">+ Quy định đổi hàng</a></li>
-                    
-                                                    <li><a href="huong-dan-mua/thong-tin-tai-khoan/index.html">+ Tài khoản ngân hàng</a></li>
-                    
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="category/lookbook/index.html">Lookbook</a>
-                    
-                    
-                                            </li>
-                                            <li>
-                                                <a href="category/video/index.html">Video</a>
-                    
-                    
-                                            </li>
-                                            <li>
-                                                <a href="category/tin-tuc/index.html">Tin tức</a>
-                    
-                    
-                                            </li>
-                                            <li>
-                                                <a href="lien-he/index.html">Liên hệ</a>
-                    
-                    
-                                            </li>
-                                        </ul>-->
-                    <div class="form-search hidden hidden-lg hidden-md hidden-sm">
-                        <form id="searchform" method="get" role="search" action="http://kkfashion.vn/">
-                            <input type="text" placeholder="Nhập mã sản phẩm cần tìm..." class="sb-search-input" name="s" id="search">
-                            <input class="sb-search-submit" type="submit" value="Tìm">
-                        </form>
-                    </div>
+                    <!--                    <div class="form-search hidden hidden-lg hidden-md hidden-sm">
+                                            <form id="searchform" method="get" role="search" action="<?= base_url('tim-kiem') ?>">
+                                                <input type="text" placeholder="Nhập mã sản phẩm cần tìm..." class="sb-search-input" name="s" id="search">
+                                                <input class="sb-search-submit" type="submit" value="Tìm">
+                                            </form>
+                                        </div>-->
 
                     <!-- /menu mobile -->
 
@@ -162,14 +181,20 @@
                     <div class="col-sm-9 hidden-xs hidden-lg hidden-md">
                         <div class="login-cart-search">
                             <div class="search">
-                                <form action="http://kkfashion.vn/" role="search" method="get" id="searchform">
-
-                                    <input name="s" class="search-input" type="text" placeholder="Nhập mã sản phẩm cần tìm...">
+                                <form action="<?= base_url('tim-kiem') ?>" role="search" id="searchform">
+                                    <input class="search-input" style=" top: 60% !important;" placeholder=" Nhập sản phẩm..." type="text" value="" name="key" id="search">
                                     <a href="javascript:void(0)" onclick="$('#searchform').submit()"><i class="fa fa-search"></i></a>
                                 </form>
                             </div>
                             <div class="cart">
-                                <a href="http://kkfashion.vn/cart/"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/icon-cart.png" alt=""> Giỏ hàng <span class="number-cart">0</span></a>
+                                <a href="<?= base_url('gio-hang') ?>"><img src="http://kkfashion.vn/wp-content/themes/kkfashion/asset/img/icon-cart.png" alt=""> Giỏ hàng <span class="number-cart"><?php
+                                        if (isset($_SESSION['totalProduct'])) {
+                                            echo $_SESSION['totalProduct'];
+                                        } else {
+                                            echo '0';
+                                        }
+                                        ?></span>
+                                </a> 
                             </div>
                             <?php
                             if ($this->session->userdata('userid')) {
@@ -215,89 +240,39 @@
                         <nav class="navbar navbar-inverse">
                             <div class="container-fluid">
                                 <div>
-
                                     <ul class="nav navbar-nav" >
                                         <li class="dropdown"> <a href="<?= base_url() ?>" class="menu-link">Trang chủ</a> </li>
+
                                         <?php
                                         foreach ($menus as $menu) {
                                             if ($menu->parent_id == 0) {
                                                 ?>
-                                                <li class="dropdown"
-                                                    >
-                                                        <?php if (check_hassub($menu->id_menu, $menu_sub)) {
-                                                            ?>
+                                                <li class="dropdown">
+                                                    <?php if (check_hassub1($menu->id_menu, $menu_sub)) {
+                                                        ?>
                                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $menu->name; ?><span class="caret"></span></a>
-                                                        <?php
-                                                        foreach ($menu_sub as $sub) {
-                                                            if ($menu->id_menu == $sub->parent_id) {
-                                                                ?>
-                                                            <li class="dropdown"
-                                                                >
-                                                                <a target="<?= $sub->target ?>"  <?php if ($sub->url != 'null') echo 'href="' . site_url($sub->url) . '"' ?>
-                                                                   title="<?= $sub->name; ?>">
-                                                                       <?= $sub->name; ?>
-                                                                </a>
-                                                            </li>
+                                                        <ul class="dropdown-menu">
                                                             <?php
-                                                        }
-                                                    }
-                                                }
-                                                ?>
+                                                            foreach ($menu_sub as $sub) {
+                                                                if ($menu->id_menu == $sub->parent_id) {
+                                                                    ?>
+                                                                    <li> <a href="<?= site_url($sub->url) ?>"><?= $sub->name ?></a></li>
+                                                                    <?php
+                                                                }
+                                                            }
+                                                            ?>
+                                                        </ul>
+                                                    <?php } else {
+                                                        ?>
+                                                        <a href="<?= site_url($menu->url) ?>"><?= $menu->name ?></a>
+                                                    <?php }
+                                                    ?>
+
                                                 </li>
                                                 <?php
                                             }
                                         }
                                         ?>
-                                    </ul>
-                                    <ul class="nav navbar-nav">
-                                        <li class="dropdown">
-                                            <a href="gioi-thieu/index.html">Giới thiệu</a>
-
-
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop online<span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="danh-muc/dam-cong-so-kk/index.html">Đầm công sở</a></li>
-
-                                                <li><a href="danh-muc/vay-dam-da-hoi/index.html">Váy đầm dạ hội</a></li>
-
-                                                <li><a href="danh-muc/vay-chong-nang-kk/index.html">Váy chống nắng</a></li>
-
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="huong-dan-mua/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hướng dẫn mua hàng<span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="huong-dan-mua/index.html">Các bước mua hàng</a></li>
-
-                                                <li><a href="huong-dan-mua/quy-dinh-doi-hang/index.html">Quy định đổi hàng</a></li>
-
-                                                <li><a href="huong-dan-mua/thong-tin-tai-khoan/index.html">Tài khoản ngân hàng</a></li>
-
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="category/lookbook/index.html">Lookbook</a>
-
-
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="category/video/index.html">Video</a>
-
-
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="category/tin-tuc/index.html">Tin tức</a>
-
-
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="lien-he/index.html">Liên hệ</a>
-
-
-                                        </li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -385,7 +360,7 @@
                                         <div class="collapse navbar-collapse m-p" id="bs-example-navbar-collapse-1">
                                             <ul class="nav navbar-nav pull-right" >
                                                 <li class="dropdown"> <a href="<?= base_url() ?>" class="menu-link">Trang chủ</a> </li>
-                                                
+
                                                 <?php
                                                 foreach ($menus as $menu) {
                                                     if ($menu->parent_id == 0) {
@@ -417,92 +392,8 @@
                                                 }
                                                 ?>
                                             </ul>
-                                            <!--                                    </ul>
-                                                                                        <ul class="nav navbar-nav pull-right">
-                                                                                            <li class="dropdown">
-                                                                                                <a href="gioi-thieu/index.html">Giới thiệu</a>
-                                            
-                                            
-                                                                                            </li>
-                                                                                            <li class="dropdown">
-                                                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop online<span class="caret"></span></a>
-                                                                                                <ul class="dropdown-menu">
-                                                                                                    <li><a href="danh-muc/dam-cong-so-kk/index.html">Đầm công sở</a></li>
-                                            
-                                                                                                    <li><a href="danh-muc/vay-dam-da-hoi/index.html">Váy đầm dạ hội</a></li>
-                                            
-                                                                                                    <li><a href="danh-muc/vay-chong-nang-kk/index.html">Váy chống nắng</a></li>
-                                            
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                            <li class="dropdown">
-                                                                                                <a href="huong-dan-mua/index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hướng dẫn mua hàng<span class="caret"></span></a>
-                                                                                                <ul class="dropdown-menu">
-                                                                                                    <li><a href="huong-dan-mua/index.html">Các bước mua hàng</a></li>
-                                            
-                                                                                                    <li><a href="huong-dan-mua/quy-dinh-doi-hang/index.html">Quy định đổi hàng</a></li>
-                                            
-                                                                                                    <li><a href="huong-dan-mua/thong-tin-tai-khoan/index.html">Tài khoản ngân hàng</a></li>
-                                            
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                            <li class="dropdown">
-                                                                                                <a href="category/lookbook/index.html">Lookbook</a>
-                                            
-                                            
-                                                                                            </li>
-                                                                                            <li class="dropdown">
-                                                                                                <a href="category/video/index.html">Video</a>
-                                            
-                                            
-                                                                                            </li>
-                                                                                            <li class="dropdown">
-                                                                                                <a href="category/tin-tuc/index.html">Tin tức</a>
-                                            
-                                            
-                                                                                            </li>
-                                                                                            <li class="dropdown">
-                                                                                                <a href="lien-he/index.html">Liên hệ</a>
-                                            
-                                            
-                                                                                            </li>
-                                            
-                                                                                        </ul>-->
                                         </div>
                                     </div>
-                                </nav>
-                                <nav id="menu" class="padd-menu hidden-sm hidden-md hidden-lg">
-                                    <ul>
-                                        <li>
-                                            <a href="gioi-thieu/index.html">Giới thiệu</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Shop online</a>
-                                            <ul>
-                                                <li><a href="danh-muc/dam-cong-so-kk/index.html">Đầm công sở</a></li>
-                                                <li><a href="danh-muc/vay-dam-da-hoi/index.html">Váy đầm dạ hội</a></li>
-                                                <li><a href="danh-muc/vay-chong-nang-kk/index.html">Váy chống nắng</a></li>
-                                            </ul>                                        </li>
-                                        <li>
-                                            <a href="huong-dan-mua/index.html">Hướng dẫn mua hàng</a>
-                                            <ul>
-                                                <li><a href="huong-dan-mua/index.html">Các bước mua hàng</a></li>
-                                                <li><a href="huong-dan-mua/quy-dinh-doi-hang/index.html">Quy định đổi hàng</a></li>
-                                                <li><a href="huong-dan-mua/thong-tin-tai-khoan/index.html">Tài khoản ngân hàng</a></li>
-                                            </ul>                                        </li>
-                                        <li>
-                                            <a href="category/lookbook/index.html">Lookbook</a>
-                                        </li>
-                                        <li>
-                                            <a href="category/video/index.html">Video</a>
-                                        </li>
-                                        <li>
-                                            <a href="category/tin-tuc/index.html">Tin tức</a>
-                                        </li>
-                                        <li>
-                                            <a href="lien-he/index.html">Liên hệ</a>
-                                        </li>
-                                    </ul>
                                 </nav>
                             </div>
                         </div>

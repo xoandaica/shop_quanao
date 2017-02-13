@@ -490,7 +490,8 @@ class Admin extends MY_Controller
                 'slogan' => $this->input->post('slogan'),
                 'site_email' => $this->input->post('site_email'),
                 'site_facebook' => $this->input->post('site_facebook'),
-
+                'app_facebook' => $this->input->post('app_facebook'),
+                'user_facebook' => $this->input->post('user_facebook'),
                 'show_room' => $this->input->post('show_room'),
                 'option_1' => $this->input->post('option_1'),
                 'option_2' => $this->input->post('option_2'),
